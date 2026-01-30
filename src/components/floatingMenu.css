@@ -1,0 +1,583 @@
+@import "../theme/GlobalStyles.css";
+@import "../theme/variables.css";
+
+/* ==========================================
+   FLOATING MENU - BASE STYLES (Mobile First)
+   ========================================== */
+
+.floating-menu {
+    position: fixed;
+    z-index: 1000;
+    
+    /* Mobile positioning */
+    bottom: 80px;
+    right: 24px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+/* ==========================================
+   CURVED GOLDEN LINE CONNECTOR
+   ========================================== */
+
+.floating-menu::after {
+    content: '';
+    position: absolute;
+    
+    /* Mobile: Smaller curve */
+    bottom: -55px;
+    right: -12px;
+    width: 30px;
+    height: calc(100% + 40px);
+    
+    /* The curved line - right and bottom borders */
+    border-right: 2px solid var(--color-gold-400);
+    border-bottom: 2px solid var(--color-gold-400);
+    border-bottom-right-radius: 24px;
+    border-top: none;
+    border-left: none;
+    
+    /* Subtle glow */
+    filter: drop-shadow(0 0 4px rgba(212, 168, 53, 0.3));
+    
+    /* Hidden by default */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.floating-menu.open::after {
+    opacity: 1;
+}
+
+/* Decorative dot at end of line (near button) */
+.floating-menu::before {
+    content: '';
+    position: absolute;
+    
+    /* Mobile positioning */
+    bottom: -58px;
+    right: 14px;
+    width: 6px;
+    height: 6px;
+    
+    background-color: var(--color-gold-400);
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(212, 168, 53, 0.5);
+    
+    opacity: 0;
+    transition: opacity 0.3s ease 0.1s;
+    pointer-events: none;
+}
+
+.floating-menu.open::before {
+    opacity: 1;
+}
+
+/* ==========================================
+   MENU BUTTON
+   ========================================== */
+
+.floating-menu-button {
+    position: fixed;
+    
+    /* Mobile: Slightly smaller button */
+    bottom: 16px;
+    right: 16px;
+    width: 52px;
+    height: 52px;
+    
+    background-color: var(--color-wine-600);
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    
+    transition: 
+        background-color 0.3s ease, 
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    
+    z-index: 1001; /* Above menu items */
+    
+    /* Prevent text selection on tap */
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+.floating-menu-button:focus,
+.floating-menu-button:hover {
+    background-color: var(--color-wine-700);
+    transform: scale(1.08);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Active state for mobile tap feedback */
+.floating-menu-button:active {
+    transform: scale(0.95);
+}
+
+.menu-icon {
+    font-size: 20px;
+    color: white;
+    line-height: 1;
+    transition: transform 0.3s ease;
+}
+
+/* Rotate icon when open */
+.floating-menu.open .floating-menu-button .menu-icon {
+    transform: rotate(90deg);
+}
+
+/* ==========================================
+   MENU ITEMS
+   ========================================== */
+
+.floating-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+}
+
+.menu-item {
+    position: relative; /* For ::after positioning */
+    
+    /* Mobile: Larger touch targets */
+    padding: 15px 0;
+
+    width: 110px;
+    
+    background-color: rgba(114, 32, 66, 0.85); /* Semi-transparent wine */
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-wine);
+    
+    /* Prevent text selection */
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    
+    /* Animation states */
+    opacity: 0;
+    transform: translateY(15px) translateX(8px);
+    
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        background-color 0.2s ease;
+}
+
+.menu-item a {
+    color: var(--color-gold-300);
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-size: var(--text-base);
+    letter-spacing: var(--tracking-wide);
+    white-space: nowrap;
+    display: block;
+}
+
+.menu-item:hover,
+.menu-item:focus {
+    background-color: var(--color-wine-600);
+}
+
+.menu-item:hover a,
+.menu-item:focus a {
+    color: var(--color-gold-200);
+}
+
+/* Active state for mobile */
+.menu-item:active {
+    transform: scale(0.97);
+    background-color: var(--color-wine-800);
+}
+
+/* ==========================================
+   MENU ITEM VISIBILITY STATES
+   ========================================== */
+
+.menu-item.visible {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+    pointer-events: auto;
+}
+
+.menu-item.hidden {
+    opacity: 0;
+    transform: translateY(15px) translateX(8px);
+    pointer-events: none;
+    /* Using visibility instead of display for animation */
+    visibility: hidden;
+    position: absolute;
+}
+
+.menu-item.visible {
+    visibility: visible;
+    position: relative;
+}
+
+/* Staggered animation delays */
+.menu-item.visible:nth-child(1) { transition-delay: 0.03s; }
+.menu-item.visible:nth-child(2) { transition-delay: 0.06s; }
+.menu-item.visible:nth-child(3) { transition-delay: 0.09s; }
+.menu-item.visible:nth-child(4) { transition-delay: 0.12s; }
+.menu-item.visible:nth-child(5) { transition-delay: 0.15s; }
+.menu-item.visible:nth-child(6) { transition-delay: 0.18s; }
+
+/* Reverse delays when hiding (faster close) */
+.menu-item.hidden:nth-child(1) { transition-delay: 0.1s; }
+.menu-item.hidden:nth-child(2) { transition-delay: 0.08s; }
+.menu-item.hidden:nth-child(3) { transition-delay: 0.06s; }
+.menu-item.hidden:nth-child(4) { transition-delay: 0.04s; }
+.menu-item.hidden:nth-child(5) { transition-delay: 0.02s; }
+.menu-item.hidden:nth-child(6) { transition-delay: 0s; }
+
+/* ==========================================
+   GOLD DOTS ON MENU ITEMS
+   ========================================== */
+
+.menu-item::after {
+    content: '';
+    position: absolute;
+    right: -3px;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    width: 5px;
+    height: 5px;
+    
+    background-color: var(--color-gold-400);
+    border-radius: 50%;
+    box-shadow: 0 0 4px rgba(212, 168, 53, 0.4);
+    
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.menu-item.visible::after {
+    opacity: 1;
+}
+
+/* ==========================================
+   BACKDROP OVERLAY (Mobile)
+   ==========================================
+   Optional: Darkens background when menu is open
+   Add this div in JSX if you want it:
+   <div className={`menu-backdrop ${isOpen ? "visible" : ""}`} onClick={() => setIsOpen(false)} />
+*/
+
+.menu-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 999;
+}
+
+.menu-backdrop.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* ==========================================
+   MEDIA QUERIES
+   ========================================== */
+
+/* ----------------------------------------
+   Extra Small Screens (< 360px)
+   ---------------------------------------- */
+@media (max-width: 359px) {
+    .floating-menu {
+        right: 16px;
+        bottom: 70px;
+    }
+    
+    .floating-menu-button {
+        width: 48px;
+        height: 48px;
+        right: 12px;
+        bottom: 12px;
+    }
+    
+    .menu-icon {
+        font-size: 18px;
+    }
+    
+    .menu-item {
+        padding: 10px 0;
+    }
+    
+    .menu-item a {
+        font-size: var(--text-sm);
+    }
+    
+    /* Adjust curve for smaller screens */
+    .floating-menu::after {
+        bottom: -48px;
+        right: -8px;
+        width: 24px;
+        height: calc(100% + 35px);
+        border-bottom-right-radius: 20px;
+    }
+    
+    .floating-menu::before {
+        bottom: -50px;
+        right: 12px;
+        width: 5px;
+        height: 5px;
+    }
+}
+
+/* ----------------------------------------
+   Small Screens - Phones (360px - 767px)
+   ---------------------------------------- */
+@media (min-width: 360px) and (max-width: 767px) {
+    .floating-menu {
+        right: 24px;
+        bottom: 80px;
+        gap: 8px;
+    }
+    
+    .floating-menu-button {
+        width: 54px;
+        height: 54px;
+        right: 16px;
+        bottom: 16px;
+    }
+    
+    .menu-icon {
+        font-size: 22px;
+    }
+    
+    .menu-item {
+        padding: 12px 0;
+    }
+    
+    .menu-item a {
+        font-size: var(--text-base);
+    }
+}
+
+/* ----------------------------------------
+   Medium Screens - Tablets (768px - 1023px)
+   ---------------------------------------- */
+@media (min-width: 768px) {
+    .floating-menu {
+        right: 32px;
+        bottom: 90px;
+        gap: 10px;
+    }
+    
+    .floating-menu-button {
+        width: 58px;
+        height: 58px;
+        right: 20px;
+        bottom: 20px;
+    }
+    
+    .menu-icon {
+        font-size: 24px;
+    }
+    
+    .menu-item {
+        padding: 12px 20px;
+    }
+    
+    .menu-item a {
+        font-size: var(--text-base);
+    }
+    
+    /* Larger curve for tablets */
+    .floating-menu::after {
+        bottom: -60px;
+        right: -16px;
+        width: 36px;
+        height: calc(100% + 45px);
+        border-bottom-right-radius: 28px;
+    }
+    
+    .floating-menu::before {
+        bottom: -62px;
+        right: 16px;
+        width: 7px;
+        height: 7px;
+    }
+    
+    .menu-item::after {
+        right: -3px;
+        width: 6px;
+        height: 6px;
+    }
+    
+    /* Hide backdrop on larger screens */
+    .menu-backdrop {
+        display: none;
+    }
+}
+
+/* ----------------------------------------
+   Large Screens - Desktops (1024px+)
+   ---------------------------------------- */
+@media (min-width: 1024px) {
+    .floating-menu {
+        right: 40px;
+        bottom: 100px;
+        gap: 10px;
+    }
+    
+    .floating-menu-button {
+        width: 60px;
+        height: 60px;
+        right: 24px;
+        bottom: 24px;
+    }
+    
+    .menu-icon {
+        font-size: 26px;
+    }
+    
+    .menu-item {
+        padding: 10px 2px;
+    }
+    
+    .menu-item a {
+        font-size: var(--text-base);
+        letter-spacing: var(--tracking-wide);
+    }
+    
+    /* Full curve for desktop */
+    .floating-menu::after {
+        bottom: -68px;
+        right: -20px;
+        width: 40px;
+        height: calc(100% + 50px);
+        border-bottom-right-radius: 30px;
+    }
+    
+    .floating-menu::before {
+        bottom: -70px;
+        right: 16px;
+        width: 8px;
+        height: 8px;
+    }
+    
+    .menu-item::after {
+        right: -3px;
+        width: 6px;
+        height: 6px;
+    }
+    
+    /* Hover effects only on desktop (not touch) */
+    .floating-menu-button:hover {
+        transform: scale(1.1);
+    }
+    
+    .menu-item:hover {
+        transform: translateX(-4px);
+    }
+}
+
+/* ----------------------------------------
+   Extra Large Screens (1440px+)
+   ---------------------------------------- */
+@media (min-width: 1440px) {
+    .floating-menu {
+        right: 48px;
+        bottom: 110px;
+    }
+    
+    .floating-menu-button {
+        width: 64px;
+        height: 64px;
+        right: 32px;
+        bottom: 32px;
+    }
+    
+    .menu-icon {
+        font-size: 28px;
+    }
+    
+    .floating-menu::after {
+        bottom: -72px;
+        right: -24px;
+        width: 44px;
+        height: calc(100% + 55px);
+    }
+    
+    .floating-menu::before {
+        bottom: -74px;
+        right: 16px;
+    }
+}
+
+/* ----------------------------------------
+   Landscape Mode on Mobile
+   ---------------------------------------- */
+@media (max-height: 500px) and (orientation: landscape) {
+    .floating-menu {
+        bottom: 70px;
+        right: 20px;
+        gap: 6px;
+    }
+    
+    .floating-menu-button {
+        width: 48px;
+        height: 48px;
+        bottom: 10px;
+        right: 12px;
+    }
+    
+    .menu-item {
+        padding: 8px 14px;
+    }
+    
+    .menu-item a {
+        font-size: var(--text-sm);
+    }
+    
+    /* Smaller curve in landscape */
+    .floating-menu::after {
+        bottom: -42px;
+        right: -10px;
+        width: 28px;
+        height: calc(100% + 30px);
+        border-bottom-right-radius: 20px;
+    }
+    
+    .floating-menu::before {
+        bottom: -44px;
+        right: 14px;
+        width: 5px;
+        height: 5px;
+    }
+}
+
+/* ----------------------------------------
+   Reduced Motion Preference
+   ---------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+    .floating-menu::after,
+    .floating-menu::before,
+    .floating-menu-button,
+    .menu-item,
+    .menu-icon {
+        transition: none;
+    }
+    
+    .menu-item.visible,
+    .menu-item.hidden {
+        transition-delay: 0s;
+    }
+}

@@ -1,0 +1,379 @@
+@import "../../theme/variables.css";
+
+/* ==========================================
+   BIOGRAPHY SECTION
+   ========================================== */
+
+.biography-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0;
+    
+    background-color: linear-gradient(
+        180deg, #fff 0%, #000 90%
+    );
+    
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================
+   SECTION HEADER - Wine Banner Style
+   ========================================== */
+
+.biography-header {
+    width: 100%;
+    padding: var(--space-8) var(--space-4);
+
+    margin-top: var(--space-8);
+    
+    /* Wine gradient background matching brochure */
+    background: linear-gradient(
+        135deg,
+        var(--color-wine-800) 0%,
+        var(--color-wine-700) 50%,
+        var(--color-wine-800) 100%
+    );
+    
+    /* Subtle texture overlay */
+    background-image: 
+        linear-gradient(
+            135deg,
+            var(--color-wine-800) 0%,
+            var(--color-wine-700) 50%,
+            var(--color-wine-800) 100%
+        ),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.biography-title {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: center;
+    gap: var(--space-2) var(--space-3);
+    
+    margin: 0;
+    text-align: center;
+}
+
+.title-script {
+    font-family: var(--font-accent);
+    font-size: clamp(var(--text-3xl), 8vw, var(--text-5xl));
+    font-weight: var(--font-normal);
+    color: var(--color-gold-400);
+    line-height: 1;
+}
+
+.title-of {
+    font-family: var(--font-accent);
+    font-size: clamp(var(--text-2xl), 5vw, var(--text-3xl));
+    font-weight: var(--font-normal);
+    color: var(--color-gold-300);
+    line-height: 1;
+}
+
+.title-name {
+    font-family: var(--font-heading);
+    font-size: clamp(var(--text-xl), 5vw, var(--text-3xl));
+    font-weight: var(--font-semibold);
+    color: var(--color-white);
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+    line-height: 1.2;
+    
+    /* Full width on smaller screens */
+    flex-basis: 100%;
+    text-align: center;
+}
+
+/* ==========================================
+   BIOGRAPHY CONTENT
+   ========================================== */
+
+.biography-content {
+    flex: 1;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--space-8) var(--space-4);
+}
+
+/* ==========================================
+   SCRIPTURE QUOTE
+   ========================================== */
+
+.biography-scripture {
+    margin: 0 0 var(--space-8) 0;
+    padding: 0;
+    text-align: left;
+}
+
+.biography-scripture p {
+    font-family: var(--font-heading);
+    font-size: clamp(var(--text-lg), 4vw, var(--text-xl));
+    font-style: italic;
+    font-weight: var(--font-medium);
+    color: var(--text-primary);
+    line-height: var(--leading-relaxed);
+    margin: 0 0 var(--space-1) 0;
+}
+
+.biography-scripture cite {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    font-style: normal;
+    font-weight: var(--font-normal);
+    color: var(--text-secondary);
+    margin-left: var(--space-4);
+}
+
+/* ==========================================
+   BIOGRAPHY TEXT
+   ========================================== */
+
+.biography-text {
+    color: var(--text-primary);
+}
+
+.biography-text p {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    font-weight: var(--font-normal);
+    line-height: var(--leading-loose);
+    text-align: justify;
+    margin: 0 0 var(--space-6) 0;
+    
+    /* Hyphenation for justified text */
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.biography-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* Closing paragraph - slightly emphasized */
+.biography-closing {
+    font-style: italic;
+    color: var(--color-wine-700);
+}
+
+/* Signature */
+.biography-signature {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-weight: var(--font-medium);
+    font-style: italic;
+    color: var(--text-primary);
+    text-align: left;
+    margin-top: var(--space-8);
+}
+
+/* ==========================================
+   DECORATIVE ELEMENTS
+   ========================================== */
+
+.biography-decor {
+    position: absolute;
+    pointer-events: none;
+}
+
+.biography-decor-flower {
+    top: 100px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    opacity: 0.1;
+    
+    background: radial-gradient(
+        circle at center,
+        var(--color-gold-400),
+        transparent 60%
+    );
+    
+    display: none; /* Show on larger screens */
+}
+
+/* ==========================================
+   SECTION FOOTER
+   ========================================== */
+
+.biography-footer {
+    width: 100%;
+    padding: var(--space-6) var(--space-4);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+    
+    background-color: var(--bg-primary);
+}
+
+.footer-line {
+    flex: 1;
+    max-width: 200px;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--color-wine-300),
+        var(--color-wine-500)
+    );
+}
+
+.footer-text {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--color-wine-700);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.footer-dot {
+    width: 24px;
+    height: 24px;
+    background-color: var(--color-wine-700);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+
+/* ==========================================
+   MEDIA QUERIES
+   ========================================== */
+
+/* Extra Small (< 360px) */
+@media (max-width: 359px) {
+    .biography-header {
+        padding: var(--space-6) var(--space-3);
+    }
+    
+    .biography-content {
+        padding: var(--space-6) var(--space-3);
+    }
+    
+    .biography-text p {
+        font-size: var(--text-sm);
+        text-align: left; /* Easier to read on tiny screens */
+    }
+    
+    .footer-text {
+        font-size: var(--text-xs);
+    }
+    
+    .footer-line {
+        max-width: 60px;
+    }
+    
+    .footer-dot {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* Small Phones (360px - 767px) */
+@media (min-width: 360px) and (max-width: 767px) {
+    .biography-content {
+        padding: var(--space-8) var(--space-5);
+    }
+    
+    .footer-line {
+        max-width: 100px;
+    }
+}
+
+/* Tablets (768px+) */
+@media (min-width: 768px) {
+    .biography-header {
+        padding: var(--space-10) var(--space-8);
+    }
+    
+    .biography-title {
+        gap: var(--space-3) var(--space-4);
+    }
+    
+    .title-name {
+        flex-basis: auto;
+    }
+    
+    .biography-content {
+        padding: var(--space-12) var(--space-8);
+    }
+    
+    .biography-text p {
+        font-size: var(--text-lg);
+        margin-bottom: var(--space-8);
+    }
+    
+    .biography-scripture {
+        margin-bottom: var(--space-10);
+    }
+    
+    .footer-line {
+        max-width: 250px;
+    }
+    
+    .footer-text {
+        font-size: var(--text-base);
+    }
+    
+    .footer-dot {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .biography-decor-flower {
+        display: block;
+        width: 250px;
+        height: 250px;
+    }
+}
+
+/* Desktop (1024px+) */
+@media (min-width: 1024px) {
+    .biography-header {
+        padding: var(--space-12) var(--space-12);
+    }
+    
+    .biography-content {
+        padding: var(--space-16) var(--space-12);
+        max-width: 900px;
+    }
+    
+    .biography-decor-flower {
+        right: 5%;
+        width: 300px;
+        height: 300px;
+        opacity: 0.15;
+    }
+    
+    .footer-line {
+        max-width: 300px;
+    }
+}
+
+/* Large Desktop (1440px+) */
+@media (min-width: 1440px) {
+    .biography-content {
+        max-width: 1000px;
+    }
+    
+    .biography-text p {
+        font-size: var(--text-xl);
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .biography-section * {
+        transition: none;
+        animation: none;
+    }
+}

@@ -1,0 +1,600 @@
+@import "../../theme/variables.css";
+
+/* ==========================================
+   FAMILY TREE SECTION
+   ========================================== */
+
+.family-tree-section {
+    position: relative;
+    width: 100%;
+    padding: var(--space-16) var(--space-4);
+    
+    /* Warm background */
+    background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #fdf9f5 30%,
+        #faf5f0 70%,
+        var(--bg-secondary) 100%
+    );
+    
+    overflow: hidden;
+}
+
+/* ==========================================
+   SECTION HEADER
+   ========================================== */
+
+.family-tree-header {
+    text-align: center;
+    margin-bottom: var(--space-12);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.family-tree-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1);
+    margin: 0 0 var(--space-4) 0;
+}
+
+.family-tree-title .title-script {
+    font-family: var(--font-accent);
+    font-size: clamp(var(--text-2xl), 6vw, var(--text-4xl));
+    color: var(--color-gold-500);
+    font-weight: var(--font-normal);
+    line-height: 1;
+}
+
+.family-tree-title .title-main {
+    font-family: var(--font-heading);
+    font-size: clamp(var(--text-3xl), 7vw, var(--text-5xl));
+    font-weight: var(--font-semibold);
+    color: var(--color-wine-800);
+    letter-spacing: var(--tracking-wide);
+}
+
+.family-tree-subtitle {
+    font-family: var(--font-body);
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: var(--leading-relaxed);
+}
+
+/* ==========================================
+   FAMILY TREE CONTAINER
+   ========================================== */
+
+.family-tree-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: var(--space-4);
+}
+
+/* ==========================================
+   TREE ROWS
+   ========================================== */
+
+.tree-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.row-label {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--color-wine-500);
+    letter-spacing: var(--tracking-widest);
+    text-transform: uppercase;
+    margin: 0 0 var(--space-4) 0;
+}
+
+.tree-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: var(--space-4);
+}
+
+/* ==========================================
+   FAMILY MEMBER CARDS
+   ========================================== */
+
+.family-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    
+    padding: var(--space-4);
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-light);
+    
+    min-width: 120px;
+    max-width: 160px;
+    
+    transition: 
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.family-member:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Highlighted (deceased) */
+.family-member.highlighted {
+    background: linear-gradient(
+        135deg,
+        var(--bg-wine) 0%,
+        #fff5f7 100%
+    );
+    border-color: var(--color-wine-300);
+    box-shadow: 
+        0 0 0 3px rgba(114, 32, 66, 0.1),
+        0 8px 24px rgba(114, 32, 66, 0.15);
+}
+
+.family-member.highlighted:hover {
+    box-shadow: 
+        0 0 0 3px rgba(114, 32, 66, 0.15),
+        0 12px 32px rgba(114, 32, 66, 0.2);
+}
+
+/* ==========================================
+   MEMBER AVATAR
+   ========================================== */
+
+.member-avatar {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    
+    background: linear-gradient(
+        135deg,
+        var(--color-gold-100) 0%,
+        var(--color-gold-200) 100%
+    );
+    
+    border-radius: 50%;
+    border: 3px solid var(--color-gold-400);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    overflow: hidden;
+}
+
+.member-avatar.large {
+    width: 90px;
+    height: 90px;
+    border-width: 4px;
+}
+
+.member-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.avatar-placeholder {
+    font-size: var(--text-3xl);
+    line-height: 1;
+}
+
+.member-avatar.large .avatar-placeholder {
+    font-size: var(--text-4xl);
+}
+
+/* Memorial ribbon */
+.memorial-ribbon {
+    position: absolute;
+    bottom: -4px;
+    right: -4px;
+    
+    width: 24px;
+    height: 24px;
+    
+    background: var(--color-wine-700);
+    color: var(--color-white);
+    
+    border-radius: 50%;
+    border: 2px solid var(--bg-primary);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    font-size: var(--text-xs);
+}
+
+/* ==========================================
+   MEMBER INFO
+   ========================================== */
+
+.member-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-0-5);
+    text-align: center;
+}
+
+.member-name {
+    font-family: var(--font-heading);
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+    line-height: var(--leading-tight);
+}
+
+.member-relation {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: var(--font-medium);
+    color: var(--color-wine-500);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+}
+
+.member-maiden {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-style: italic;
+    color: var(--text-muted);
+}
+
+.member-years,
+.member-birth {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+}
+
+/* ==========================================
+   CONNECTORS
+   ========================================== */
+
+.connector-vertical {
+    width: 2px;
+    height: 30px;
+    background: linear-gradient(
+        180deg,
+        var(--color-gold-400),
+        var(--color-wine-300)
+    );
+}
+
+.connector-horizontal {
+    width: 40px;
+    height: 2px;
+    background: var(--color-gold-400);
+    align-self: center;
+}
+
+/* ==========================================
+   MARRIAGE CONNECTOR
+   ========================================== */
+
+.marriage-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-2);
+}
+
+.marriage-icon {
+    font-size: var(--text-2xl);
+}
+
+.marriage-date {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+/* ==========================================
+   COUPLE ROW
+   ========================================== */
+
+.couple-row .couple {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+/* ==========================================
+   CHILDREN ROW
+   ========================================== */
+
+.children-row .children {
+    position: relative;
+}
+
+.child-connector {
+    display: none; /* Simplified - can be enhanced with actual lines */
+}
+
+/* ==========================================
+   PETS ROW
+   ========================================== */
+
+.pets-row {
+    margin-top: var(--space-8);
+    padding-top: var(--space-8);
+    border-top: 1px dashed var(--color-gold-300);
+}
+
+.pets-row .pets {
+    gap: var(--space-6);
+}
+
+.pet-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    
+    padding: var(--space-3) var(--space-4);
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-gold-200);
+}
+
+.pet-icon {
+    font-size: var(--text-3xl);
+}
+
+.pet-name {
+    font-family: var(--font-heading);
+    font-size: var(--text-base);
+    font-weight: var(--font-medium);
+    color: var(--text-primary);
+}
+
+/* ==========================================
+   FAMILY QUOTE
+   ========================================== */
+
+.family-quote {
+    max-width: 500px;
+    margin: var(--space-12) auto 0 auto;
+    padding: var(--space-6);
+    
+    text-align: center;
+    
+    background: transparent;
+    border: none;
+}
+
+.family-quote p {
+    font-family: var(--font-heading);
+    font-size: clamp(var(--text-lg), 3vw, var(--text-xl));
+    font-style: italic;
+    font-weight: var(--font-normal);
+    color: var(--color-wine-600);
+    line-height: var(--leading-relaxed);
+    margin: 0;
+    
+    /* Decorative quotes */
+    position: relative;
+}
+
+.family-quote p::before,
+.family-quote p::after {
+    font-family: var(--font-accent);
+    font-size: var(--text-4xl);
+    color: var(--color-gold-400);
+    opacity: 0.5;
+    line-height: 0;
+}
+
+.family-quote p::before {
+    content: '"';
+    margin-right: var(--space-2);
+}
+
+.family-quote p::after {
+    content: '"';
+    margin-left: var(--space-2);
+}
+
+/* ==========================================
+   DECORATIVE ELEMENTS
+   ========================================== */
+
+.family-tree-decor {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    pointer-events: none;
+    opacity: 0.08;
+    border-radius: 50%;
+}
+
+.family-tree-decor-left {
+    top: 15%;
+    left: -75px;
+    background: radial-gradient(
+        circle at center,
+        var(--color-wine-400),
+        transparent 70%
+    );
+}
+
+.family-tree-decor-right {
+    bottom: 15%;
+    right: -75px;
+    background: radial-gradient(
+        circle at center,
+        var(--color-gold-400),
+        transparent 70%
+    );
+}
+
+
+/* ==========================================
+   MEDIA QUERIES
+   ========================================== */
+
+/* Extra Small (< 360px) */
+@media (max-width: 359px) {
+    .family-tree-section {
+        padding: var(--space-10) var(--space-3);
+    }
+    
+    .family-member {
+        min-width: 100px;
+        max-width: 130px;
+        padding: var(--space-3);
+    }
+    
+    .member-avatar {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .member-avatar.large {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .couple-row .couple {
+        flex-direction: column;
+    }
+    
+    .marriage-connector {
+        flex-direction: row;
+    }
+}
+
+/* Small Phones (360px - 767px) */
+@media (min-width: 360px) and (max-width: 767px) {
+    .couple-row .couple {
+        flex-wrap: wrap;
+    }
+    
+    .tree-members {
+        gap: var(--space-3);
+    }
+}
+
+/* Tablets (768px+) */
+@media (min-width: 768px) {
+    .family-tree-section {
+        padding: var(--space-20) var(--space-8);
+    }
+    
+    .family-member {
+        min-width: 140px;
+        max-width: 180px;
+        padding: var(--space-5);
+    }
+    
+    .member-avatar {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .member-avatar.large {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .member-name {
+        font-size: var(--text-lg);
+    }
+    
+    .tree-members {
+        gap: var(--space-6);
+    }
+    
+    .connector-vertical {
+        height: 40px;
+    }
+    
+    .connector-horizontal {
+        width: 60px;
+    }
+    
+    .family-tree-decor {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* Desktop (1024px+) */
+@media (min-width: 1024px) {
+    .family-tree-section {
+        padding: var(--space-24) var(--space-12);
+    }
+    
+    .family-tree-container {
+        gap: var(--space-4);
+    }
+    
+    .family-member {
+        min-width: 160px;
+        max-width: 200px;
+        padding: var(--space-6);
+    }
+    
+    .member-avatar.large {
+        width: 110px;
+        height: 110px;
+    }
+    
+    .tree-members {
+        gap: var(--space-8);
+    }
+    
+    .connector-vertical {
+        height: 50px;
+    }
+    
+    .family-tree-decor {
+        width: 250px;
+        height: 250px;
+        opacity: 0.1;
+    }
+}
+
+/* Large Desktop (1440px+) */
+@media (min-width: 1440px) {
+    .family-tree-container {
+        max-width: 1200px;
+    }
+    
+    .family-member {
+        max-width: 220px;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .family-member {
+        transition: none;
+    }
+    
+    .family-member:hover {
+        transform: none;
+    }
+}

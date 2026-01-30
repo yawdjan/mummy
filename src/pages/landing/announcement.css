@@ -1,0 +1,548 @@
+@import "../../theme/variables.css";
+
+/* ==========================================
+   ANNOUNCEMENT SECTION - Obituary Announcement
+   ========================================== */
+
+.announcement-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: var(--space-12) var(--space-4);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Soft gradient background */
+    background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #fdf8f9 30%,
+        #f9f0f2 60%,
+        #f5e6e9 100%
+    );
+    
+    overflow: hidden;
+}
+
+/* ==========================================
+   BACKGROUND CROSS WATERMARK
+   ========================================== */
+
+.announcement-cross {
+    position: absolute;
+    right: 5%;
+    bottom: 10%;
+    width: 400px;
+    height: 400px;
+    opacity: 0.08;
+    pointer-events: none;
+    
+    /* Cross shape using gradients */
+    background: 
+        linear-gradient(var(--color-wine-400), var(--color-wine-400)) center/20% 100% no-repeat,
+        linear-gradient(var(--color-wine-400), var(--color-wine-400)) center/60% 15% no-repeat;
+}
+
+/* ==========================================
+   MAIN CONTENT CONTAINER
+   ========================================== */
+
+.announcement-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-8);
+    
+    max-width: 600px;
+    width: 100%;
+    
+    z-index: 2;
+}
+
+/* ==========================================
+   PORTRAIT WITH ORNATE FRAME
+   ========================================== */
+
+.portrait-container {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+}
+
+.portrait-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    
+    /* Ornate gold frame effect */
+    padding: 12px;
+    background: linear-gradient(
+        135deg,
+        #d4a835 0%,
+        #f3dc93 15%,
+        #d4a835 30%,
+        #b8892a 50%,
+        #d4a835 70%,
+        #f3dc93 85%,
+        #d4a835 100%
+    );
+    
+    border-radius: var(--radius-lg);
+    
+    /* Outer gold border */
+    box-shadow: 
+        0 0 0 4px #b8892a,
+        0 0 0 6px #d4a835,
+        0 0 0 10px rgba(212, 168, 53, 0.3),
+        0 20px 60px rgba(0, 0, 0, 0.2),
+        inset 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.portrait-image {
+    width: 100%;
+    height: 100%;
+    
+    /* Placeholder - wine gradient until real image added */
+    background: linear-gradient(
+        180deg,
+        #e8d5d8 0%,
+        #d4b8bd 50%,
+        #c9a5ab 100%
+    );
+    
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    
+    border-radius: var(--radius-sm);
+    
+    /* Inner frame shadow */
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Decorative corner flourishes */
+.frame-flourish {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    pointer-events: none;
+    
+    /* Gold decorative curl */
+    background: radial-gradient(
+        circle at center,
+        var(--color-gold-500) 0%,
+        var(--color-gold-400) 40%,
+        transparent 70%
+    );
+    opacity: 0.8;
+}
+
+.frame-flourish-tl { top: -15px; left: -15px; }
+.frame-flourish-tr { top: -15px; right: -15px; transform: scaleX(-1); }
+.frame-flourish-bl { bottom: -15px; left: -15px; transform: scaleY(-1); }
+.frame-flourish-br { bottom: -15px; right: -15px; transform: scale(-1); }
+
+/* ==========================================
+   NAME AND DETAILS
+   ========================================== */
+
+.announcement-details {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+/* Full Name */
+.announcement-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    margin: 0;
+}
+
+.name-title {
+    font-family: var(--font-accent);
+    font-size: clamp(var(--text-2xl), 6vw, var(--text-4xl));
+    color: var(--color-wine-600);
+    font-weight: var(--font-normal);
+    line-height: 1.2;
+}
+
+.name-first {
+    font-family: var(--font-heading);
+    font-size: clamp(var(--text-3xl), 10vw, var(--text-6xl));
+    font-weight: var(--font-semibold);
+    color: var(--color-wine-800);
+    letter-spacing: var(--tracking-wide);
+    line-height: 1.1;
+}
+
+.name-full {
+    font-family: var(--font-heading);
+    font-size: clamp(var(--text-2xl), 8vw, var(--text-5xl));
+    font-weight: var(--font-medium);
+    color: var(--color-wine-800);
+    letter-spacing: var(--tracking-wide);
+    line-height: 1.1;
+}
+
+/* Maiden Name */
+.announcement-maiden {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    font-style: italic;
+    color: var(--color-wine-500);
+    margin: var(--space-1) 0 0 0;
+}
+
+/* Nickname */
+.announcement-nickname {
+    font-family: var(--font-accent);
+    font-size: clamp(var(--text-xl), 4vw, var(--text-2xl));
+    color: var(--color-gold-600);
+    margin: var(--space-2) 0 0 0;
+}
+
+/* Age */
+.announcement-age {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-weight: var(--font-medium);
+    color: var(--text-secondary);
+    margin: var(--space-3) 0 0 0;
+    letter-spacing: var(--tracking-wide);
+}
+
+/* ==========================================
+   DIVIDER
+   ========================================== */
+
+.announcement-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 300px;
+    margin: var(--space-4) 0;
+    gap: var(--space-4);
+}
+
+.announcement-divider::before,
+.announcement-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--color-gold-400),
+        transparent
+    );
+}
+
+.divider-ornament {
+    color: var(--color-gold-500);
+    font-size: var(--text-lg);
+}
+
+/* ==========================================
+   LIFE DATES
+   ========================================== */
+
+.announcement-dates {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+}
+
+.date-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+.date-label {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    color: var(--color-wine-500);
+    letter-spacing: var(--tracking-widest);
+    text-transform: uppercase;
+}
+
+.date-value {
+    font-family: var(--font-heading);
+    font-size: var(--text-base);
+    font-weight: var(--font-medium);
+    color: var(--text-primary);
+}
+
+.date-separator {
+    color: var(--color-gold-500);
+    font-size: var(--text-xl);
+    font-weight: var(--font-light);
+    margin: 0 var(--space-2);
+}
+
+/* ==========================================
+   LOCATION OF PASSING
+   ========================================== */
+
+.announcement-location {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1);
+    margin-top: var(--space-4);
+}
+
+.location-label {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-style: italic;
+    color: var(--text-muted);
+}
+
+.location-value {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-weight: var(--font-medium);
+    color: var(--color-wine-700);
+}
+
+/* ==========================================
+   DECORATIVE FLORAL ELEMENTS
+   ========================================== */
+
+.announcement-decor {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    pointer-events: none;
+    opacity: 0.15;
+    
+    background: radial-gradient(
+        ellipse at center,
+        var(--color-gold-400),
+        transparent 70%
+    );
+}
+
+.announcement-decor-left {
+    left: -50px;
+    top: 20%;
+}
+
+.announcement-decor-right {
+    right: -50px;
+    bottom: 20%;
+}
+
+
+/* ==========================================
+   MEDIA QUERIES
+   ========================================== */
+
+/* Extra Small (< 360px) */
+@media (max-width: 359px) {
+    .announcement-section {
+        padding: var(--space-8) var(--space-3);
+        min-height: auto;
+    }
+    
+    .portrait-container {
+        max-width: 240px;
+    }
+    
+    .portrait-frame {
+        padding: 8px;
+    }
+    
+    .frame-flourish {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .announcement-dates {
+        flex-direction: column;
+        gap: var(--space-3);
+    }
+    
+    .date-separator {
+        display: none;
+    }
+    
+    .announcement-cross {
+        width: 120px;
+        height: 180px;
+    }
+}
+
+/* Small Phones (360px - 767px) */
+@media (min-width: 360px) and (max-width: 767px) {
+    .announcement-section {
+        padding: var(--space-10) var(--space-4);
+    }
+    
+    .portrait-container {
+        max-width: 280px;
+    }
+}
+
+/* Tablets (768px+) */
+@media (min-width: 768px) {
+    .announcement-section {
+        padding: var(--space-16) var(--space-8);
+    }
+    
+    .announcement-content {
+        max-width: 700px;
+        gap: var(--space-10);
+    }
+
+    .announcement-cross {
+        height: 300px;
+    }
+    
+    .portrait-container {
+        max-width: 350px;
+    }
+    
+    .portrait-frame {
+        padding: 16px;
+        box-shadow: 
+            0 0 0 5px #b8892a,
+            0 0 0 8px #d4a835,
+            0 0 0 14px rgba(212, 168, 53, 0.3),
+            0 30px 80px rgba(0, 0, 0, 0.25),
+            inset 0 0 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .frame-flourish {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .frame-flourish-tl { top: -20px; left: -20px; }
+    .frame-flourish-tr { top: -20px; right: -20px; }
+    .frame-flourish-bl { bottom: -20px; left: -20px; }
+    .frame-flourish-br { bottom: -20px; right: -20px; }
+    
+    .announcement-maiden {
+        font-size: var(--text-lg);
+    }
+    
+    .announcement-age {
+        font-size: var(--text-xl);
+    }
+    
+    .date-value {
+        font-size: var(--text-lg);
+    }
+    
+    .announcement-cross {
+        width: 250px;
+        height: 380px;
+    }
+    
+    .announcement-decor {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+/* Desktop (1024px+) */
+@media (min-width: 1024px) {
+    .announcement-section {
+        padding: var(--space-20) var(--space-12);
+    }
+
+    .announcement-cross {
+        width: 300px;
+        height: 200px;
+    }
+    
+    .announcement-content {
+        flex-direction: row;
+        max-width: 100%;
+        gap: var(--space-16);
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .portrait-container {
+        flex-shrink: 1;
+        max-width: 380px;
+    }
+    
+    .announcement-details {
+        text-align: left;
+        align-items: flex-start;
+    }
+    
+    .announcement-name {
+        align-items: flex-start;
+    }
+    
+    .name-full {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .announcement-divider {
+        justify-content: flex-start;
+    }
+    
+    .announcement-divider::before {
+        display: none;
+    }
+    
+    .announcement-dates {
+        justify-content: flex-start;
+    }
+    
+    .date-group {
+        align-items: flex-start;
+    }
+    
+    .announcement-location {
+        align-items: flex-start;
+    }
+    
+    .announcement-cross {
+        right: 10%;
+        width: 300px;
+        height: 450px;
+    }
+}
+
+/* Large Desktop (1440px+) */
+@media (min-width: 1440px) {
+    .announcement-content {
+        max-width: 1100px;
+    }
+    
+    .portrait-container {
+        max-width: 420px;
+    }
+    
+    .portrait-frame {
+        padding: 20px;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .announcement-section * {
+        transition: none;
+        animation: none;
+    }
+}

@@ -1,0 +1,351 @@
+@import "../../theme/variables.css";
+
+/* ==========================================
+   PASSIONS SECTION
+   ========================================== */
+
+.passions-section {
+    position: relative;
+    width: 100%;
+    padding: var(--space-16) var(--space-4);
+    
+    /* Soft background with subtle pattern */
+    background: linear-gradient(
+        180deg,
+        var(--bg-wine) 0%,
+        #ffffff 30%,
+        #fdfbf3 70%,
+        var(--color-gold-50) 100%
+    );
+    
+    overflow: hidden;
+}
+
+/* ==========================================
+   SECTION HEADER
+   ========================================== */
+
+.passions-header {
+    text-align: center;
+    margin-bottom: var(--space-12);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.passions-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1);
+    margin: 0 0 var(--space-4) 0;
+}
+
+.title-script {
+    font-family: var(--font-accent);
+    font-size: clamp(var(--text-2xl), 6vw, var(--text-4xl));
+    color: var(--color-gold-500);
+    font-weight: var(--font-normal);
+    line-height: 1;
+}
+
+.title-main {
+    font-family: var(--font-heading);
+    font-size: clamp(var(--text-2xl), 5vw, var(--text-4xl));
+    font-weight: var(--font-semibold);
+    color: var(--color-wine-800);
+    letter-spacing: var(--tracking-wide);
+}
+
+.passions-subtitle {
+    font-family: var(--font-body);
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: var(--leading-relaxed);
+}
+
+/* ==========================================
+   PASSIONS GRID
+   ========================================== */
+
+.passions-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    
+    max-width: 1200px;
+    margin: 0 auto var(--space-12) auto;
+    padding: 0 var(--space-2);
+}
+
+/* ==========================================
+   PASSION CARD
+   ========================================== */
+
+.passion-card {
+    position: relative;
+    padding: var(--space-6);
+    
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    
+    /* Subtle border and shadow */
+    border: 1px solid var(--border-light);
+    box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.05),
+        0 1px 3px rgba(0, 0, 0, 0.08);
+    
+    transition: 
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.passion-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+        0 12px 40px rgba(114, 32, 66, 0.1),
+        0 4px 12px rgba(0, 0, 0, 0.08);
+    border-color: var(--color-gold-200);
+}
+
+/* Icon */
+.passion-icon {
+    font-size: var(--text-4xl);
+    margin-bottom: var(--space-4);
+    line-height: 1;
+    
+    /* Subtle background circle */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(
+        135deg,
+        var(--color-gold-50) 0%,
+        var(--bg-wine) 100%
+    );
+    border-radius: 50%;
+}
+
+/* Title */
+.passion-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+    color: var(--color-wine-800);
+    margin: 0 0 var(--space-3) 0;
+}
+
+/* Description */
+.passion-description {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+    margin: 0 0 var(--space-4) 0;
+}
+
+/* Highlight Tag */
+.passion-highlight {
+    display: inline-block;
+    padding: var(--space-1) var(--space-3);
+    
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    color: var(--color-wine-700);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    
+    background: var(--bg-wine);
+    border-radius: var(--radius-full);
+}
+
+/* ==========================================
+   QUOTE SECTION
+   ========================================== */
+
+.passions-quote {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: var(--space-8);
+    
+    text-align: center;
+    
+    background: linear-gradient(
+        135deg,
+        rgba(114, 32, 66, 0.03) 0%,
+        rgba(212, 168, 53, 0.05) 100%
+    );
+    
+    border-radius: var(--radius-2xl);
+    border: 1px solid var(--color-gold-200);
+}
+
+.passions-quote p {
+    font-family: var(--font-heading);
+    font-size: clamp(var(--text-lg), 3vw, var(--text-2xl));
+    font-style: italic;
+    font-weight: var(--font-normal);
+    color: var(--color-wine-700);
+    line-height: var(--leading-relaxed);
+    margin: 0 0 var(--space-4) 0;
+}
+
+.passions-quote cite {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    font-style: normal;
+    font-weight: var(--font-medium);
+    color: var(--color-gold-600);
+}
+
+/* ==========================================
+   DECORATIVE ELEMENTS
+   ========================================== */
+
+.passions-decor {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    pointer-events: none;
+    opacity: 0.08;
+    border-radius: 50%;
+}
+
+.passions-decor-tl {
+    top: 5%;
+    left: -100px;
+    background: radial-gradient(
+        circle at center,
+        var(--color-wine-400),
+        transparent 70%
+    );
+}
+
+.passions-decor-br {
+    bottom: 10%;
+    right: -100px;
+    background: radial-gradient(
+        circle at center,
+        var(--color-gold-400),
+        transparent 70%
+    );
+}
+
+
+/* ==========================================
+   MEDIA QUERIES
+   ========================================== */
+
+/* Extra Small (< 360px) */
+@media (max-width: 359px) {
+    .passions-section {
+        padding: var(--space-10) var(--space-3);
+    }
+    
+    .passions-header {
+        margin-bottom: var(--space-8);
+    }
+    
+    .passion-card {
+        padding: var(--space-5);
+    }
+    
+    .passion-icon {
+        width: 60px;
+        height: 60px;
+        font-size: var(--text-3xl);
+    }
+    
+    .passions-quote {
+        padding: var(--space-6);
+    }
+}
+
+/* Small Phones (360px - 767px) */
+@media (min-width: 360px) and (max-width: 767px) {
+    .passions-grid {
+        gap: var(--space-5);
+    }
+}
+
+/* Tablets (768px+) */
+@media (min-width: 768px) {
+    .passions-section {
+        padding: var(--space-20) var(--space-8);
+    }
+    
+    .passions-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-8);
+    }
+    
+    .passion-card {
+        padding: var(--space-8);
+    }
+    
+    .passion-icon {
+        width: 80px;
+        height: 80px;
+        font-size: var(--text-5xl);
+    }
+    
+    .passion-title {
+        font-size: var(--text-2xl);
+    }
+    
+    .passions-decor {
+        width: 300px;
+        height: 300px;
+        opacity: 0.1;
+    }
+}
+
+/* Desktop (1024px+) */
+@media (min-width: 1024px) {
+    .passions-section {
+        padding: var(--space-24) var(--space-12);
+    }
+    
+    .passions-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Make the last two cards span if odd number */
+    .passion-card:nth-last-child(2):nth-child(odd) {
+        grid-column: 1 / 2;
+    }
+    
+    .passion-card:last-child:nth-child(even) {
+        grid-column: 2 / 3;
+    }
+}
+
+/* Large Desktop (1440px+) */
+@media (min-width: 1440px) {
+    .passions-grid {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 1400px;
+    }
+    
+    /* Reset span for 4 columns */
+    .passion-card:nth-last-child(2):nth-child(odd),
+    .passion-card:last-child:nth-child(even) {
+        grid-column: auto;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .passion-card {
+        transition: none;
+    }
+    
+    .passion-card:hover {
+        transform: none;
+    }
+}
