@@ -117,17 +117,27 @@ export default function Landing() {
       <div className="profile" id="profile"
       // style={{position: `${ isMin ? "fixed" : "relative" }`}}
       >
-        <div className={`shrink-for-profile ${isMin ? "to-left" : "to-center"}`} style={{ width: `${(100 - progress * 70)}vw`, height: `${(100 - progress * 70)}vh` }}>
+        <div
+          className={`shrink-for-profile ${isMin ? "to-left" : "to-center"}`}
+          style={{
+            width: `${(100 - progress * 70)}vw`,
+            height: `${(100 - progress * 70)}vh`,
+            pointerEvents: isMin ? "none" : "auto" // allow touches to pass through this wrapper when isMin is true
+          }}
+        >
           {/* Logo and Profile Circle */}
-          <div className={`profile-circle
-            ${phase === "fadingOut" ? "fade-out" : ""}
-            ${phase === "fadingIn" ? "fade-in" : ""}`}
-            id="profile-circle" style={(vW <= 1200) ? {
-              width: `${profileWidth}%`
-            } : {
-              width: `${profileWidth}px`
-            }}>
-            <div className="circle-container" id="circle-container" >
+          <div
+            className={`profile-circle
+          ${phase === "fadingOut" ? "fade-out" : ""}
+          ${phase === "fadingIn" ? "fade-in" : ""}`}
+            id="profile-circle"
+            style={
+              vW <= 1200
+                ? { width: `${profileWidth}%`, pointerEvents: "auto" } // re-enable for interactive children
+                : { width: `${profileWidth}px`, pointerEvents: "auto" }
+            }
+          >
+            <div className="circle-container" id="circle-container">
               <img
                 src="/res/circle.png"
                 alt="circle-decor"
@@ -139,7 +149,11 @@ export default function Landing() {
             <div className="profile-image" id="profile-image"></div>
           </div>
         </div>
-        <div className={`hero-text ${isMin ? "to-header" : ""}`} id="profile-text">
+        <div
+          className={`hero-text ${isMin ? "to-header" : ""}`}
+          id="profile-text"
+          style={{ pointerEvents: "auto" }}
+        >
           <h1> Lorem ipsum dolor sit amet consectetur adipisicing elit. </h1>
         </div>
         {/* NEW HEADER VERSION */}

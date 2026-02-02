@@ -153,11 +153,9 @@
     position: relative; /* For ::after positioning */
     
     /* Mobile: Larger touch targets */
-    padding: 15px 0;
-
-    width: 110px;
+    padding: 12px 18px;
     
-    background-color: rgba(114, 32, 66, 0.85); /* Semi-transparent wine */
+    background-color: rgba(114, 32, 66, 0.95); /* Semi-transparent wine */
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-wine);
     
@@ -182,7 +180,18 @@
     font-size: var(--text-base);
     letter-spacing: var(--tracking-wide);
     white-space: nowrap;
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.menu-item-icon {
+    font-size: var(--text-lg);
+    line-height: 1;
+}
+
+.menu-item-text {
+    font-family: var(--font-heading);
 }
 
 .menu-item:hover,
@@ -232,14 +241,22 @@
 .menu-item.visible:nth-child(4) { transition-delay: 0.12s; }
 .menu-item.visible:nth-child(5) { transition-delay: 0.15s; }
 .menu-item.visible:nth-child(6) { transition-delay: 0.18s; }
+.menu-item.visible:nth-child(7) { transition-delay: 0.21s; }
+.menu-item.visible:nth-child(8) { transition-delay: 0.24s; }
+.menu-item.visible:nth-child(9) { transition-delay: 0.27s; }
+.menu-item.visible:nth-child(10) { transition-delay: 0.30s; }
 
 /* Reverse delays when hiding (faster close) */
-.menu-item.hidden:nth-child(1) { transition-delay: 0.1s; }
-.menu-item.hidden:nth-child(2) { transition-delay: 0.08s; }
-.menu-item.hidden:nth-child(3) { transition-delay: 0.06s; }
-.menu-item.hidden:nth-child(4) { transition-delay: 0.04s; }
-.menu-item.hidden:nth-child(5) { transition-delay: 0.02s; }
-.menu-item.hidden:nth-child(6) { transition-delay: 0s; }
+.menu-item.hidden:nth-child(1) { transition-delay: 0.18s; }
+.menu-item.hidden:nth-child(2) { transition-delay: 0.16s; }
+.menu-item.hidden:nth-child(3) { transition-delay: 0.14s; }
+.menu-item.hidden:nth-child(4) { transition-delay: 0.12s; }
+.menu-item.hidden:nth-child(5) { transition-delay: 0.10s; }
+.menu-item.hidden:nth-child(6) { transition-delay: 0.08s; }
+.menu-item.hidden:nth-child(7) { transition-delay: 0.06s; }
+.menu-item.hidden:nth-child(8) { transition-delay: 0.04s; }
+.menu-item.hidden:nth-child(9) { transition-delay: 0.02s; }
+.menu-item.hidden:nth-child(10) { transition-delay: 0s; }
 
 /* ==========================================
    GOLD DOTS ON MENU ITEMS
@@ -248,7 +265,7 @@
 .menu-item::after {
     content: '';
     position: absolute;
-    right: -3px;
+    right: -10px;
     top: 50%;
     transform: translateY(-50%);
     
@@ -316,7 +333,7 @@
     }
     
     .menu-item {
-        padding: 10px 0;
+        padding: 10px 14px;
     }
     
     .menu-item a {
@@ -362,7 +379,7 @@
     }
     
     .menu-item {
-        padding: 12px 0;
+        padding: 12px 18px;
     }
     
     .menu-item a {
@@ -416,7 +433,7 @@
     }
     
     .menu-item::after {
-        right: -3px;
+        right: -14px;
         width: 6px;
         height: 6px;
     }
@@ -449,7 +466,7 @@
     }
     
     .menu-item {
-        padding: 10px 2px;
+        padding: 10px 20px;
     }
     
     .menu-item a {
@@ -474,7 +491,7 @@
     }
     
     .menu-item::after {
-        right: -3px;
+        right: -16px;
         width: 6px;
         height: 6px;
     }
@@ -527,7 +544,7 @@
    ---------------------------------------- */
 @media (max-height: 500px) and (orientation: landscape) {
     .floating-menu {
-        bottom: 70px;
+        bottom: 60px;
         right: 20px;
         gap: 6px;
     }

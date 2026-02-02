@@ -5,6 +5,7 @@ import FloatingMenuButton from './components/floatingMenu.jsx';
 import Landing from './pages/landing/landing.jsx';
 import Footer from './components/footer.jsx';
 import Service from './pages/events/Service.jsx';
+import PhotoGallery from './pages/multimedia/photogallery.jsx';
 
 /**
  * Memorial Site App - Mrs. Adriana Amy Danquah
@@ -41,7 +42,8 @@ function App() {
                     <Route path="/" element={<Landing />} />
                     <Route path="*" element={<Landing />} />
                     <Route path="/landing" element={<Landing />} />
-                    <Route path="/landing/Events" element={<Service />} />
+                    <Route path="/events" element={<Service />} />
+                    <Route path="/gallery" element={<PhotoGallery />} />
                 </Routes>
                 
                 {/* Site Footer */}

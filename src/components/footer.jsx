@@ -1,16 +1,19 @@
 import React from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./footer.css";
 
 /**
  * Footer Component - Site Navigation & Information
  * 
  * Sections:
- * - Core Obituary (main memorial pages)
- * - Service & Events (funeral details)
+ * - Core Obituary (main memorial pages - same page hash links)
+ * - Service & Events (separate /events page)
  * - Multimedia & Guestbook
- * - Contact/Share
  */
 export default function Footer() {
+    // eslint-disable-next-line no-unused-vars
+    const location = useLocation();
+    
     // Navigation sections
     const coreObituary = [
         { text: "Profile", link: "#landing-page" },
@@ -22,21 +25,43 @@ export default function Footer() {
     ];
 
     const serviceEvents = [
-        { text: "Order of Service", link: "#order-of-service" },
-        { text: "Hymns", link: "#hymns" },
-        { text: "Funeral Details", link: "#funeral-details" },
-        { text: "Wake Details", link: "#wake-details" },
+        { text: "Order of Service", link: "/events#order-of-service" },
+        { text: "Hymns", link: "/events#hymns" },
+        { text: "Funeral Details", link: "/events#funeral-details" },
+        { text: "Wake Details", link: "/events#wake-details" },
     ];
 
     const multimedia = [
-        { text: "Photo Gallery", link: "#slideshow-section" },
-        { text: "Guest Book", link: "#guestbook" },
-        { text: "Video Tributes", link: "#video-tributes" },
-        { text: "Tributes", link: "#tributes" },
+        { text: "Photo Gallery", link: "/gallery#photo-gallery-page" },
+        { text: "Guest Book", link: "/gallery#guestbook" },
+        { text: "Video Tributes", link: "/gallery#video-tributes" },
+        { text: "Tributes", link: "/gallery#tributes" },
     ];
 
-    // Scroll to section smoothly
+    // Handle navigation - works for both same-page hash links and cross-page links
     const handleNavClick = (e, link) => {
+        // Check if it's a cross-page link (starts with /)
+        if (link.startsWith('/')) {
+            // Let the Link component handle it via href
+            // But we still need to handle the hash scroll after navigation
+            const hashIndex = link.indexOf('#');
+            if (hashIndex !== -1) {
+                const hash = link.substring(hashIndex + 1);
+                // Small delay to allow page transition
+                setTimeout(() => {
+                    const element = document.getElementById(hash);
+                    if (element) {
+                        element.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }, 100);
+            }
+            return; // Let default Link behavior happen
+        }
+        
+        // Same-page hash link
         e.preventDefault();
         const targetId = link.replace('#', '');
         const element = document.getElementById(targetId);
@@ -50,6 +75,37 @@ export default function Footer() {
         
         // Update URL hash
         window.history.pushState(null, '', link);
+    };
+
+    // Render navigation link - handles both hash and route links
+    const renderNavLink = (item, index) => {
+        const isRouteLink = item.link.startsWith('/');
+        
+        if (isRouteLink) {
+            // Cross-page link using react-router Link
+            return (
+                <li key={index}>
+                    <Link 
+                        to={item.link}
+                        onClick={(e) => handleNavClick(e, item.link)}
+                    >
+                        {item.text}
+                    </Link>
+                </li>
+            );
+        }
+        
+        // Same-page hash link
+        return (
+            <li key={index}>
+                <a 
+                    href={item.link}
+                    onClick={(e) => handleNavClick(e, item.link)}
+                >
+                    {item.text}
+                </a>
+            </li>
+        );
     };
 
     return (
@@ -81,16 +137,7 @@ export default function Footer() {
                     <nav className="footer-section footer-nav" aria-label="Core obituary navigation">
                         <h4 className="nav-title">The Obituary</h4>
                         <ul className="nav-list">
-                            {coreObituary.map((item, index) => (
-                                <li key={index}>
-                                    <a 
-                                        href={item.link}
-                                        onClick={(e) => handleNavClick(e, item.link)}
-                                    >
-                                        {item.text}
-                                    </a>
-                                </li>
-                            ))}
+                            {coreObituary.map((item, index) => renderNavLink(item, index))}
                         </ul>
                     </nav>
 
@@ -98,16 +145,7 @@ export default function Footer() {
                     <nav className="footer-section footer-nav" aria-label="Service and events navigation">
                         <h4 className="nav-title">Service & Events</h4>
                         <ul className="nav-list">
-                            {serviceEvents.map((item, index) => (
-                                <li key={index}>
-                                    <a 
-                                        href={item.link}
-                                        onClick={(e) => handleNavClick(e, item.link)}
-                                    >
-                                        {item.text}
-                                    </a>
-                                </li>
-                            ))}
+                            {serviceEvents.map((item, index) => renderNavLink(item, index))}
                         </ul>
                     </nav>
 
@@ -115,16 +153,7 @@ export default function Footer() {
                     <nav className="footer-section footer-nav" aria-label="Multimedia navigation">
                         <h4 className="nav-title">Multimedia & Tributes</h4>
                         <ul className="nav-list">
-                            {multimedia.map((item, index) => (
-                                <li key={index}>
-                                    <a 
-                                        href={item.link}
-                                        onClick={(e) => handleNavClick(e, item.link)}
-                                    >
-                                        {item.text}
-                                    </a>
-                                </li>
-                            ))}
+                            {multimedia.map((item, index) => renderNavLink(item, index))}
                         </ul>
                     </nav>
                 </div>
