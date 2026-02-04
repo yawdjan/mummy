@@ -19,7 +19,7 @@ export default function Passions() {
             id: 1,
             icon: "✝",
             title: "Faith & Service",
-            description: "Dedicated her life to serving God in Christ Apostolic Church International. As Elder in charge of Evangelism, no distance was too far and no task too burdensome. She longed to see the house of God flourish.",
+            description: "Dedicated her life to serving God in Christ Apostolic Church International. As Elder in charge of Evangelism, no distance was too far and no task too burdensomeand it was evident both in and out the church. She longed to see the house of God flourish.",
             highlight: "Elder in Charge of Evangelism"
         },
         {
@@ -68,7 +68,7 @@ export default function Passions() {
             id: 8,
             icon: "🏠",
             title: "Hospitality",
-            description: "Her generosity knew no limits. As many as were willing to call her 'Maa', she called them 'menua'. Her home was always open, her love overflowing.",
+            description: "Her generosity knew no limits. As many as were willing to call her 'Maa', she called 'me mma'. Her home was always open, her love overflowing.",
             highlight: "Unparalleled Hospitality"
         }
     ];

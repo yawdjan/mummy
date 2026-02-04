@@ -29,71 +29,117 @@ export default function Biography() {
                 {/* Biography Text */}
                 <div className="biography-text">
                     <p>
-                        The first serious encounter between myself and my late wife was at my father's 
-                        shop in Accra. After a couple of meetings, I engaged in serious conversation 
-                        about deepening friendship with my future wife in January 1999. My late wife was 
-                        in the company of a family friend heading to their trading centre in a market at 
-                        Accra when we first met. We linked up, maintained the communication line and 
-                        later agreed that we were compatible and could move our relationship forward. 
-                        She started with me as a Christian woman while I remained the typical 
-                        businessman. We elevated our relationship and had our engagement ceremony 
-                        on the 17th - July, 1999 at her paternal residence at Kweikuma estate, Takoradi. 
-                        We got married the next month, 15th - August, 1999 at Christ Apostolic Church 
-                        International - Mamprobi branch.
+                        TThe life of Adriana EfuaAmy Danquah, affectionately known as Aunty Amy, is a vibrant
+                        tapestry woven with threads of unwavering faith, selfless service, and a profound love for
+                        Christ and humanity. Aunty Amy was born in Sekondi-Takoradi o n 22nd-september, 1974
+                        to Joseph V.C. Orleans and Victoria Annan. She joined her paternal family in Freetown as
+                        a child when the family relocated to Sierra Leone. Her formative years were spent in Sierra
+                        Leone, where she lived for nearly fifteen years. She was raised with a foundational
+                        understanding that life's greatest value is found in what we give out rather than what we
+                        accumulate. She lived most of her childhood life in Freetown-Sierra Leone with her
+                        paternal family. Those who knew her early life remember a young woman who found her
+                        greatest joy in helping others. This conviction took deep root at an early age when she
+                        made the life-altering decision to follow Jesus Christ. From that moment forward, her
+                        journey was no longer her own; it became a mission to reflect the light of the Gospel in
+                        every corner of her world. Over the past fifty-one years, she moved through the seasons
+                        of life, from a challenging childhood, through the energetic aspirations of youthfulness to
+                        the seasoned wisdom of adulthood with a singular focus to be the hands and feet of the Lord Jesus to those in need.
                     </p>
 
                     <p>
-                        We moved to our apartment at Darkuman junction after marriage and started 
-                        our family. I worked as the manager of a family business construction firm, 
-                        Bremak Ventures Ltd, and she worked as a clothing trader in Accra. We had our 
-                        first child, Efua Danquah in 2001. The second child, Yaw Danquah was in 2004 
-                        and our last child, Kukua Danquah was born in 2009. My late wife later worked 
-                        hard and joined me as one of the directors in some significant companies and 
-                        organizations. After my late wife received her bachelor of arts degree in 
-                        communication studies (development communication) from the African 
-                        University College of Communication in 2014, she pledged and committed her 
-                        life to serving GOD in different roles in Christ Apostolic Church International. Our 
-                        family lived a simple, content and happy Christian life till the sorrowful demise of 
-                        my wife.
+                        In her youthful age, Adriana Amy Danquah sought to align her professional and personal
+                        life with her spiritual convictions. Whether she was working with Consika Ltd and Danqsi
+                        Ltd or raising her family, she viewed every environment as a mission field. She realized
+                        early in life that to serve the Lord Jesus was to serve humanity, and so she began to view
+                        every person she met as an image-bearer of the Creator. She did not just speak about
+                        the love of Christ, she demonstrated it by mentoring young women and helping others.
+                        Her involvement in Christ Apostolic Church International-CACI activities served as a
+                        cornerstone of her life, where she led with a servant's heart and mentored the younger
+                        generation o f believers, teaching them that true leadership is rooted i n humility. She was
+                        often found preparing meals for the needy, organizing women's fellowship retreats, or
+                        providing quiet counsel to the grieving. Those early years were defined by a yearning for
+                        a greater purpose. The seeds o f her future service were already being sown i n her natural
+                        empathy and her stand as a helping hand to others. In those early years, she learned the
+                        value of hard work and the importance of family.
                     </p>
 
                     <p>
-                        Amy my dear, was the affectionate name I called my late wife. Amy my dear, you 
-                        were a blessing, a shelter and a light to the children and myself. You were not just 
-                        my wife, but you were my companion, my confidant, the very heart of our home, 
-                        and the light that guided our family. From the moment our paths crossed in 
-                        Accra, I knew you were special. Your grace, your wisdom, and the kindness in 
-                        your eyes captured me completely.
+                        Aunty Amy's passion for building God's Kingdom was extraordinary. When the CACI New
+                        Bortianor Local Assembly began in the year 2000, Aunty Amy made it a pledge to be
+                        present at the Friday Morning Prayer Meetings continuously while still being fully
+                        committed to fellowshipping at New Mamprobi Assembly. In 2009, Aunty Amy finally
+                        joined Christ Apostolic Church International, New Bortianor Assembly, and instantly
+                        became a strong pillar in the New Bortianor Assembly. As the Elder in charge of
+                        Evangelism, she served with passion and grace. No distance was too far and no task too
+                        burdensome. After every service, she ensured visitations were done via phone calls,
+                        follow-ups, and personal visits using her own resources. Aunty Amy lived over 14km away
+                        from the church, yet she always made it a responsibility to arrive early and serve
+                        wholeheartedly. Aunty Amy's passion for GOD's work made her lead the then Missions
+                        Director, Apostle Amaning (Rtd), Pastor Woode and other church leaders to establish
+                        the Sierra Leone Branch of CACI, an achievement that continues to bear fruit. For Adriana
+                        Amy Danquah, "To live is Christ and to die is gain" as the Apostle Paul submitted in
+                        Philippians 1:21. To Aunty Amy, Christ Apostolic Church International was her family, her
+                        home and her joy.
                     </p>
 
                     <p>
-                        You walked into my life with the dignity of a queen and the humility of a servant, 
-                        and you blessed me with a love that was pure, unwavering, and true. You taught 
-                        our children the values of respect, hard work, and faith. You were the pillar of our 
-                        family. People in need came to you for assistance and comfort and you gave it 
-                        freely without getting tired.
+                        A defining chapter of Adriana Amy Danquah's story unfolded at the age of 25years, when
+                        she entered into the sacred covenant of marriage with Kwame Danquah. This union was
+                        far more than a social milestone. This union was the joining of two hearts under a shared
+                        mission to serve the Lord Jesus. Adriana Amy Danquah entered into platonic relationship
+                        with her future husband, Kwame Danquah in January 1999. Adriana Amy orleans as she
+                        was called, got engaged to kwame Danquah on the I7th - July, 1999 at her paternal
+                        residence at Kweikuma estate, Takoradi. Adriana Amy Orleans got married to Kwame
+                        Danquah on 15th - August, 1999 at Christ Apostolic Church International - Mamprobi
+                        branch. As she stood on the matrimonial altar, she committed not only to a partner but to
+                        a lifetime of building a Christian home. Together, the couple navigated the early years of
+                        adulthood, learning that the strength of a marriage is found in the three-fold cord of
+                        husband, wife and God. This relationship became the bedrock from which her public
+                        service grew, providing her with the support and love necessary to pour herself out for
+                        others. Aunty Amy and the husband moved to an apartment at Darkuman junction after
+                        marriage and started a family. The husband worked as the manager of a family business
+                        construction firm, Bremak Ventures Ltd, and Aunty Amy worked as a clothing trader in
+                        Accra. The couple had their first child, Efua Danquah in 2001. The second child, Yaw
+                        Danquah was in 2004 and the last child, Kukua Danquah was born in 2009. Aunty Amy
+                        taught her children the values of respect, hard work, and faith. People in need came t o her
+                        for assistance and comfort and she gave it freely without getting tired. Aunty Amy worked
+                        hard and joined the husband as one of the directors in some companies and
+                        organizations. After Aunty Amy received her Bachelor of Arts degree in communication
+                        studies (development communication) from the African University College of
+                        Communication in 2014, she pledged and committed her life to serving GOD in different
+                        roles in Christ Apostolic Church International.
                     </p>
 
                     <p>
-                        I watched you give and give and I learnt from you how to love without counting 
-                        the cost. Even in your final days, your strength never wavered. You faced 
-                        everything with courage and grace, never complaining, always putting others 
-                        first. You taught me what true resilience means, not just to endure, but to do so 
-                        with love in your heart.
+                        Adriana Amy Danquah worked as a director of Consika Ltd, a construction company, a
+                        director of Dangsi Ltd,aninvestment management company and the Women Affairs
+                        Director of the International Secretariat of Harakati Za Muungano, a Pan-African NGO.
+                        Aunty Amy was a tireless advocate for workers welfare. She consistently stood for
+                        improved salaries and better working conditions, ensuring that the well-being of working
+                        staff was never overlooked. She carried the workers concerns as her own and spoke on
+                        behalf of workers with courage, and love. Beyond advocacy, Aunty Amy assisted workers
+                        with her own hands. Aunty Amy shared in the workers daily struggles by always availing
+                        herself to assist when financial or work-related challenges arose. I n her generosity, she
+                        went even further, by purchasing essential items and offering them to staff on
+                        interest-free credit, simply to ensure that everyone had what they needed to live with
+                        dignity. Her approach transformed the companies into a family, not just a place of work.
+                        Indeed, Aunty Amy was more than a director; she was a mother and a guardian for some
+                        of the companies.
                     </p>
 
                     <p>
-                        I am pained and restless without your presence. But I find comfort in knowing 
-                        that you are now at peace, resting in the arms of the Almighty GOD in JESUS 
-                        NAME, free from pain and suffering. I will honor your memory every day and 
-                        make your name a blessing to generations unborn. I will raise our children with 
-                        the same love, wisdom, faith and strength you poured into them. I will keep your 
-                        story alive and your spirit living on in everything we do. You were more than a 
-                        wife, yes, you were a blessing from GOD.
+                        Adriana Amy Danquah's legacy will not be found in titles or accolades, but in the lives she
+                        has touched, the mouths she has fed and the souls she has pointed toward the Cross. To
+                        her husband, children and extended family, she was a source of constant encouragement,
+                        a typical "Proverbs 31" woman in the flesh and a living example of the Fruit of the Spirit. To
+                        her community, she was a helping hand and a peacemaker.
+                        May the LORD JESUS grant you perfect peace and perfect rest i n heaven.
+                        Your memory will forever remain a blessing.
+                        Damirifa due.
                     </p>
 
                     <p className="biography-closing">
-                        Rest well, Amy my dearest love. My prayer is that your soul find perfect peace 
+                        Rest well, Adriana Amy Danquah. My prayer is that your soul find perfect peace
                         and eternal rest in JESUS OUR LORD.
                     </p>
 
@@ -105,7 +151,7 @@ export default function Biography() {
 
             {/* Decorative Elements */}
             <div className="biography-decor biography-decor-flower" />
-            
+
             {/* Footer
             <footer className="biography-footer">
                 <div className="footer-line" />

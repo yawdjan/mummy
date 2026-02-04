@@ -16,22 +16,22 @@ export default function FamilyTree() {
         // The deceased
         self: {
             name: "Adriana Amy Danquah",
-            maidenName: "Amissah",
-            birthYear: "1970",
-            deathYear: "2024",
+            maidenName: "Orleans",
+            birthYear: "1974",
+            deathYear: "2025",
             image: null, // Add image path: "/res/adriana.jpg"
         },
         
         // Parents
         parents: {
             father: {
-                name: "Mr. Amissah",
+                name: "Joseph V.C. Orleans ",
                 relation: "Father",
-                location: "Takoradi",
+                location: "Canada",
                 image: null,
             },
             mother: {
-                name: "Mrs. Amissah",
+                name: "Victoria Annan",
                 relation: "Mother",
                 location: "Takoradi",
                 image: null,
@@ -40,7 +40,7 @@ export default function FamilyTree() {
         
         // Spouse
         spouse: {
-            name: "Mr. Danquah",
+            name: "Kwame Danquah",
             relation: "Husband",
             marriageDate: "August 15, 1999",
             marriageLocation: "Christ Apostolic Church International, Mamprobi",
@@ -155,7 +155,7 @@ export default function FamilyTree() {
                             </div>
                             <div className="member-info">
                                 <span className="member-name">{family.self.name}</span>
-                                <span className="member-maiden">née {family.self.maidenName}</span>
+                                <span className="member-maiden">Aunty Amy</span>
                                 <span className="member-years">{family.self.birthYear} — {family.self.deathYear}</span>
                             </div>
                         </div>

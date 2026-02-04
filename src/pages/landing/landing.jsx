@@ -154,11 +154,11 @@ export default function Landing() {
           id="profile-text"
           style={{ pointerEvents: "auto" }}
         >
-          <h1> Lorem ipsum dolor sit amet consectetur adipisicing elit. </h1>
+          <h1> In Loving Memory Of The Late Mrs Adriana Amy Danquah. </h1>
         </div>
         {/* NEW HEADER VERSION */}
         <div className={`header-title ${isMin && !isWhite ? "visible" : ""}`}>
-          <p> Lorem Ipsum </p>
+          <p> Adriana Amy Danquah </p>
         </div>
         <div className={`header-title white ${isMin && isWhite ? "visible" : ""}`}>
           <p className="white" > Lorem Ipsum </p>

@@ -13,19 +13,40 @@ import "./Service.css";
 export default function Service() {
     // Order of Service items
     const orderOfService = [
-        { time: "6:00 AM", event: "Filing Past of Remains", location: "Residence" },
-        { time: "7:00 AM", event: "Departure to Church", location: "" },
-        { time: "8:00 AM", event: "Arrival at Church", location: "Christ Apostolic Church International" },
-        { time: "8:15 AM", event: "Opening Prayer", location: "" },
-        { time: "8:30 AM", event: "Hymn - CAC Hymn No. 3", location: "" },
-        { time: "8:45 AM", event: "Biography", location: "" },
-        { time: "9:00 AM", event: "Tributes", location: "" },
-        { time: "9:30 AM", event: "Hymn - CAC Hymn No. 21", location: "" },
-        { time: "9:45 AM", event: "Sermon", location: "" },
-        { time: "10:30 AM", event: "Closing Prayer", location: "" },
-        { time: "11:00 AM", event: "Departure to Cemetery", location: "" },
-        { time: "12:00 PM", event: "Interment", location: "Private Cemetery" },
-        { time: "1:00 PM", event: "Reception", location: "Family Residence" },
+        { time: "5:00 AM", event: "Pre-Burial Service", location: "" },
+        { event: "Opening Prayer", location: "" },
+        { event: "Filing Past", location: "Family" },
+        { event: "Filing Past ", location: "Friends and Sympathizers" },
+        { event: "Filing Past ", location: "Workers" },
+        { time: "6:00 AM", event: "Filing Past", location: "Christ Apostolic Church International" },
+        { time: "8:30 AM", event: "Tributes", location: "" },
+        { event: "Opening Prayer", location: "" },
+        { event: "Hymn - CAC Hymn No. 3", location: "" },
+        { event: "Praises and Worship", location: "Minister Selina Darlington /Mrs Priscilla Wadie-Essuman" },
+        { event: "Filing Past", location: "Clergy /Officers/ GWM" },
+        { event: "Filing Past", location: "Family /Friends /Workers" },
+        { event: "Song Ministration", location: "" },
+        { event: "1st Scripture Reading", location: "English: Elder Kweku Agyei. Twi: Abigail Blankson" },
+        { event: "Song Ministration", location: "" },
+        { event: "Biography", location: "" },
+        { event: "Tribute", location: "" },
+        { event: "Thanksgiving offering", location: "" },
+        { event: "Introduction of Dignitaries", location: "" },
+        { event: "Solo", location: "" },
+        { event: "Word Ministration", location: "" },
+        { event: "Offertory to the Family", location: "" },
+        { event: "Prayer for the Bereaved Family", location: "" },
+        { event: "Announcement", location: "" },
+        { event: "Closing Prayer", location: "" },
+        { event: "Benediction", location: "" },
+        { event: "Kete dance/Cultural Display", location: "Troupe" },
+        { time: "At the Grave", event: "Prayer", location: "Osu Cemetery" },
+        { event: "CAC Hymn: 21", location: "Osu Cemetery" },
+        { event: "Interment", location: "Osu Cemetery" },
+        { event: "Laying of Wreath", location: "Osu Cemetery" },
+        { event: "Announcement", location: "Osu Cemetery" },
+        { event: "Closing Prayer", location: "Osu Cemetery" },
+        { event: "Benediction", location: "Osu Cemetery" },
     ];
 
     // Hymns data
@@ -122,34 +143,33 @@ export default function Service() {
 
     // Funeral details
     const funeralDetails = {
-        date: "Saturday, February 15, 2025",
+        date: "Saturday, February 7, 2026",
         service: {
-            time: "8:00 AM",
-            venue: "Christ Apostolic Church International",
-            address: "New Bortianor Assembly, Accra",
-        },
-        interment: {
-            time: "12:00 PM",
-            venue: "Private Cemetery",
-            address: "Accra",
+            time: "6:00 AM",
+            venue: "State House",
+            address: "Osu, Accra",
         },
         reception: {
-            time: "1:00 PM",
-            venue: "Family Residence",
-            address: "Accra",
+            time: "8:30 AM",
+            venue: "State House",
+            address: "Osu, Accra",
         },
-        dressCode: "White & Gold or Traditional Funeral Cloth",
+        interment: {
+            time: "",
+            venue: "Osu Cemetery",
+            address: "Osu, Accra",
+        },
+        dressCode: "Black & Red",
     };
 
     // Wake details
     const wakeDetails = {
         date: "Friday, February 14, 2025",
         time: "6:00 PM - 10:00 PM",
-        venue: "Family Residence",
-        address: "Accra, Ghana",
+        venue: "Christ Apostolic Church International",
+        address: "New Bortianor, Accra, Ghana",
         activities: [
             "Hymns and Prayers",
-            "Tributes from Family & Friends",
             "Photo & Video Memories",
             "Light Refreshments",
         ],
@@ -263,10 +283,18 @@ export default function Service() {
                             <div className="details-grid">
                                 {/* Service */}
                                 <div className="detail-block">
-                                    <h3 className="block-title">Funeral Service</h3>
+                                    <h3 className="block-title">Funeral Service - Part 1</h3>
                                     <p className="block-time">{funeralDetails.service.time}</p>
                                     <p className="block-venue">{funeralDetails.service.venue}</p>
                                     <p className="block-address">{funeralDetails.service.address}</p>
+                                </div>
+
+                                {/* Reception */}
+                                <div className="detail-block">
+                                    <h3 className="block-title">Pre-Burial Service</h3>
+                                    <p className="block-time">{funeralDetails.reception.time}</p>
+                                    <p className="block-venue">{funeralDetails.reception.venue}</p>
+                                    <p className="block-address">{funeralDetails.reception.address}</p>
                                 </div>
 
                                 {/* Interment */}
@@ -275,14 +303,6 @@ export default function Service() {
                                     <p className="block-time">{funeralDetails.interment.time}</p>
                                     <p className="block-venue">{funeralDetails.interment.venue}</p>
                                     <p className="block-address">{funeralDetails.interment.address}</p>
-                                </div>
-
-                                {/* Reception */}
-                                <div className="detail-block">
-                                    <h3 className="block-title">Reception</h3>
-                                    <p className="block-time">{funeralDetails.reception.time}</p>
-                                    <p className="block-venue">{funeralDetails.reception.venue}</p>
-                                    <p className="block-address">{funeralDetails.reception.address}</p>
                                 </div>
                             </div>
 

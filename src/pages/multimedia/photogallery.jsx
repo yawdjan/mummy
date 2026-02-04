@@ -86,7 +86,7 @@ const MediaItem = ({ item, index, onClick, isVisible }) => {
     const [error, setError] = useState(false);
 
     // Base URL for your VPS
-    const BASE_URL = "http://192.168.100.151:5050";
+    const BASE_URL = "http://192.168.100.100:5050";
 
     return (
         <div
@@ -239,7 +239,7 @@ const FullscreenModal = ({
             >
                 {currentItem.type === 'photo' ? (
                     <img
-                        src={`http://192.168.100.151:5050${currentItem.src}`}
+                        src={`http://192.168.100.100:5050${currentItem.src}`}
                         alt={currentItem.caption}
                         className="modal-image"
                     />
@@ -247,7 +247,7 @@ const FullscreenModal = ({
                     <div className="modal-video-container">
                         <video
                             ref={videoRef}
-                            src={`http://192.168.100.151:5050${currentItem.src}`}
+                            src={`http://192.168.100.100:5050${currentItem.src}`}
                             className="modal-video"
                             controls
                             autoPlay
@@ -284,7 +284,7 @@ const FullscreenModal = ({
                                         onIndexChange(actualIndex);
                                     }}
                                 >
-                                    <img src={`http://192.168.100.151:5050${item.src}#t=0.1`} alt="" />
+                                    <img src={`http://192.168.100.100:5050${item.src}#t=0.1`} alt="" />
                                 </button>
                             );
                         } else {
@@ -297,7 +297,7 @@ const FullscreenModal = ({
                                         onIndexChange(actualIndex);
                                     }}
                                 >
-                                    <img src={`http://192.168.100.151:5050${item.thumbnail}`} alt="" />
+                                    <img src={`http://192.168.100.100:5050${item.thumbnail}`} alt="" />
                                 </button>
                             );
                         }
@@ -326,7 +326,7 @@ export default function PhotoGallery() {
     useEffect(() => {
         const loadMedia = async () => {
             try {
-                const response = await fetch('http://192.168.100.151:5050/api/media');
+                const response = await fetch('http://192.168.100.100:5050/api/media');
                 const data = await response.json();
                 setMedia(data);
             } catch (error) {
