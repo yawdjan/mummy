@@ -17,76 +17,13 @@ import Tributes from "./tributes.jsx";
  * - Keyboard navigation
  */
 
-// Sample media data - Replace with actual photos/videos
-const generateSampleMedia = () => {
-    const media = [];
-
-    // Unsplash photo IDs for variety
-    const unsplashIds = [
-        'photo-1529156069898-49953e39b3ac', // Family gathering
-        'photo-1511895426328-dc8714191300', // Celebration
-        'photo-1516589091380-5d8e87df6999', // Happy moments
-        'photo-1529333166437-7750a6dd5a70', // Family portrait
-        'photo-1517457373958-b7bdd4587205', // Outdoor gathering
-        'photo-1504439468489-c8920d796a29', // Church
-        'photo-1523050854058-8df90110c9f1', // Graduation
-        'photo-1469371670807-013ccf25f16a', // Wedding
-        'photo-1507003211169-0a1dd7228f2d', // Portrait
-        'photo-1494790108377-be9c29b29330', // Woman portrait
-        'photo-1517841905240-472988babdf9', // Portrait
-        'photo-1438761681033-6461ffad8d80', // Smiling woman
-        'photo-1472099645785-5658abf4ff4e', // Man portrait
-        'photo-1534528741775-53994a69daeb', // Portrait
-        'photo-1501196354995-cbb51c65adc3', // Family
-        'photo-1542596768-5d1d21f1cf98', // Portrait
-        'photo-1544005313-94ddf0286df2', // Portrait
-        'photo-1531746020798-e6953c6e8e04', // Portrait
-        'photo-1500648767791-00dcc994a43e', // Portrait
-        'photo-1506794778202-cad84cf45f1d', // Portrait
-    ];
-
-    // Generate 100 sample items
-    for (let i = 1; i <= 100; i++) {
-        const isVideo = i % 20 === 0; // Every 20th item is a video
-        const photoId = unsplashIds[i % unsplashIds.length];
-
-        // Vary the sizes for visual interest
-        const sizes = ['small', 'medium', 'large', 'tall', 'wide'];
-        const size = sizes[i % sizes.length];
-
-        if (isVideo) {
-            media.push({
-                id: i,
-                type: 'video',
-                thumbnail: `https://images.unsplash.com/${photoId}?w=400&h=300&fit=crop`,
-                src: 'https://www.w3schools.com/html/mov_bbb.mp4',
-                caption: `Video Memory ${Math.ceil(i / 20)}`,
-                date: `${2015 + Math.floor(Math.random() * 10)}`,
-                size: 'medium',
-            });
-        } else {
-            media.push({
-                id: i,
-                type: 'photo',
-                thumbnail: `https://images.unsplash.com/${photoId}?w=600&h=400&fit=crop&q=80`,
-                src: `https://images.unsplash.com/${photoId}?w=1920&h=1080&fit=crop&q=90`,
-                caption: `Memory #${i}`,
-                date: `${2015 + Math.floor(Math.random() * 10)}`,
-                size: size,
-            });
-        }
-    }
-
-    return media;
-};
-
 // Lazy loaded media item component
 const MediaItem = ({ item, index, onClick, isVisible }) => {
     const [loaded, setLoaded] = useState(false);
     const [error, setError] = useState(false);
 
     // Base URL for your VPS
-    const BASE_URL = "http://192.168.100.100:5050";
+    const BASE_URL = "http://192.168.100.213:5050";
 
     return (
         <div
@@ -239,7 +176,7 @@ const FullscreenModal = ({
             >
                 {currentItem.type === 'photo' ? (
                     <img
-                        src={`http://192.168.100.100:5050${currentItem.src}`}
+                        src={`http://192.168.100.213:5050${currentItem.src}`}
                         alt={currentItem.caption}
                         className="modal-image"
                     />
@@ -247,7 +184,7 @@ const FullscreenModal = ({
                     <div className="modal-video-container">
                         <video
                             ref={videoRef}
-                            src={`http://192.168.100.100:5050${currentItem.src}`}
+                            src={`http://192.168.100.213:5050${currentItem.src}`}
                             className="modal-video"
                             controls
                             autoPlay
@@ -284,7 +221,7 @@ const FullscreenModal = ({
                                         onIndexChange(actualIndex);
                                     }}
                                 >
-                                    <img src={`http://192.168.100.100:5050${item.src}#t=0.1`} alt="" />
+                                    <img src={`http://192.168.100.213:5050${item.src}#t=0.1`} alt="" />
                                 </button>
                             );
                         } else {
@@ -297,7 +234,7 @@ const FullscreenModal = ({
                                         onIndexChange(actualIndex);
                                     }}
                                 >
-                                    <img src={`http://192.168.100.100:5050${item.thumbnail}`} alt="" />
+                                    <img src={`http://192.168.100.213:5050${item.thumbnail}`} alt="" />
                                 </button>
                             );
                         }
@@ -326,9 +263,9 @@ export default function PhotoGallery() {
     useEffect(() => {
         const loadMedia = async () => {
             try {
-                const response = await fetch('http://192.168.100.100:5050/api/media');
+                const response = await fetch('http://localhost:5050/api/media');
                 const data = await response.json();
-                setMedia(data);
+                setMedia(data.media);
             } catch (error) {
                 console.error("Failed to scout media:", error);
             } finally {

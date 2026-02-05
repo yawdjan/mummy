@@ -161,7 +161,7 @@ export default function Landing() {
           <p> Adriana Amy Danquah </p>
         </div>
         <div className={`header-title white ${isMin && isWhite ? "visible" : ""}`}>
-          <p className="white" > Lorem Ipsum </p>
+          <p className="white" > Adriana Amy Danquah </p>
         </div>
         {progress < 0.1 && (
           <div className="scroll-indicator" aria-hidden="true">

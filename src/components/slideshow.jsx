@@ -20,19 +20,19 @@ export default function Slideshow() {
     const slides = [
         {
             id: 1,
-            src: "/res/slide1.jpg",
+            src: "/res/2019-09-20_b0b4d33f-da2f-ec4d-2e69-632f23455d64-main.jpg",
             alt: "Memorial photo 1",
             caption: "A Beautiful Soul"
         },
         {
             id: 2,
-            src: "/res/slide2.jpg",
+            src: "/res/20241226_155052.jpg",
             alt: "Memorial photo 2",
             caption: "Cherished Memories"
         },
         {
             id: 3,
-            src: "/res/slide3.jpg",
+            src: "/res/IMG_20200705_0058.jpg",
             alt: "Memorial photo 3",
             caption: "Forever in Our Hearts"
         }
