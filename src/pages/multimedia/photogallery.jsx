@@ -221,7 +221,7 @@ const FullscreenModal = ({
                                         onIndexChange(actualIndex);
                                     }}
                                 >
-                                    <img src={`http://192.168.100.213:5050${item.src}#t=0.1`} alt="" />
+                                    <video src={`http://192.168.100.213:5050${item.src}#t=0.1`} alt="" />
                                 </button>
                             );
                         } else {
