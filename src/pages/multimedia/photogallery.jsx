@@ -23,7 +23,7 @@ const MediaItem = ({ item, index, onClick, isVisible }) => {
     const [error, setError] = useState(false);
 
     // Base URL for your VPS
-    const BASE_URL = "http://192.168.100.213:5050";
+    const BASE_URL = "http://adrianaamydanquah.cloud";
 
     return (
         <div
@@ -176,7 +176,7 @@ const FullscreenModal = ({
             >
                 {currentItem.type === 'photo' ? (
                     <img
-                        src={`http://192.168.100.213:5050${currentItem.src}`}
+                        src={`http://adrianaamydanquah.cloud${currentItem.src}`}
                         alt={currentItem.caption}
                         className="modal-image"
                     />
@@ -184,7 +184,7 @@ const FullscreenModal = ({
                     <div className="modal-video-container">
                         <video
                             ref={videoRef}
-                            src={`http://192.168.100.213:5050${currentItem.src}`}
+                            src={`http://adrianaamydanquah.cloud${currentItem.src}`}
                             className="modal-video"
                             controls
                             autoPlay
@@ -221,7 +221,7 @@ const FullscreenModal = ({
                                         onIndexChange(actualIndex);
                                     }}
                                 >
-                                    <video src={`http://192.168.100.213:5050${item.src}#t=0.1`} alt="" />
+                                    <video src={`http://adrianaamydanquah.cloud${item.src}#t=0.1`} alt="" />
                                 </button>
                             );
                         } else {
@@ -234,7 +234,7 @@ const FullscreenModal = ({
                                         onIndexChange(actualIndex);
                                     }}
                                 >
-                                    <img src={`http://192.168.100.213:5050${item.thumbnail}`} alt="" />
+                                    <img src={`http://adrianaamydanquah.cloud${item.thumbnail}`} alt="" />
                                 </button>
                             );
                         }
@@ -263,7 +263,7 @@ export default function PhotoGallery() {
     useEffect(() => {
         const loadMedia = async () => {
             try {
-                const response = await fetch('http://localhost:5050/api/media');
+                const response = await fetch('http://adrianaamydanquah.cloud/api/media');
                 const data = await response.json();
                 setMedia(data.media);
             } catch (error) {

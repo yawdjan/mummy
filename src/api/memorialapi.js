@@ -5,7 +5,7 @@
  * for Guestbook and Tributes functionality
  */
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://192.168.100.213:5050/api';
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://adrianaamydanquah.cloud/api';
 
 // Generate or retrieve session ID for heart tracking
 const getSessionId = () => {
