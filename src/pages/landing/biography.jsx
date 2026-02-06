@@ -29,9 +29,9 @@ export default function Biography() {
                 {/* Biography Text */}
                 <div className="biography-text">
                     <p>
-                        TThe life of Adriana EfuaAmy Danquah, affectionately known as Aunty Amy, is a vibrant
+                        The life of Adriana EfuaAmy Danquah, affectionately known as Aunty Amy, is a vibrant
                         tapestry woven with threads of unwavering faith, selfless service, and a profound love for
-                        Christ and humanity. Aunty Amy was born in Sekondi-Takoradi o n 22nd-september, 1974
+                        Christ and humanity. Aunty Amy was born in Sekondi-Takoradi on 22nd-september, 1974
                         to Joseph V.C. Orleans and Victoria Annan. She joined her paternal family in Freetown as
                         a child when the family relocated to Sierra Leone. Her formative years were spent in Sierra
                         Leone, where she lived for nearly fifteen years. She was raised with a foundational
@@ -55,10 +55,10 @@ export default function Biography() {
                         the love of Christ, she demonstrated it by mentoring young women and helping others.
                         Her involvement in Christ Apostolic Church International-CACI activities served as a
                         cornerstone of her life, where she led with a servant's heart and mentored the younger
-                        generation o f believers, teaching them that true leadership is rooted i n humility. She was
+                        generation of believers, teaching them that true leadership is rooted in humility. She was
                         often found preparing meals for the needy, organizing women's fellowship retreats, or
                         providing quiet counsel to the grieving. Those early years were defined by a yearning for
-                        a greater purpose. The seeds o f her future service were already being sown i n her natural
+                        a greater purpose. The seeds of her future service were already being sown in her natural
                         empathy and her stand as a helping hand to others. In those early years, she learned the
                         value of hard work and the importance of family.
                     </p>
@@ -101,7 +101,7 @@ export default function Biography() {
                         construction firm, Bremak Ventures Ltd, and Aunty Amy worked as a clothing trader in
                         Accra. The couple had their first child, Efua Danquah in 2001. The second child, Yaw
                         Danquah was in 2004 and the last child, Kukua Danquah was born in 2009. Aunty Amy
-                        taught her children the values of respect, hard work, and faith. People in need came t o her
+                        taught her children the values of respect, hard work, and faith. People in need came to her
                         for assistance and comfort and she gave it freely without getting tired. Aunty Amy worked
                         hard and joined the husband as one of the directors in some companies and
                         organizations. After Aunty Amy received her Bachelor of Arts degree in communication
@@ -119,7 +119,7 @@ export default function Biography() {
                         staff was never overlooked. She carried the workers concerns as her own and spoke on
                         behalf of workers with courage, and love. Beyond advocacy, Aunty Amy assisted workers
                         with her own hands. Aunty Amy shared in the workers daily struggles by always availing
-                        herself to assist when financial or work-related challenges arose. I n her generosity, she
+                        herself to assist when financial or work-related challenges arose. In her generosity, she
                         went even further, by purchasing essential items and offering them to staff on
                         interest-free credit, simply to ensure that everyone had what they needed to live with
                         dignity. Her approach transformed the companies into a family, not just a place of work.
@@ -144,7 +144,6 @@ export default function Biography() {
                     </p>
 
                     <p className="biography-signature">
-                        Damirifa due
                     </p>
                 </div>
             </div>

@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import "./photogallery.css";
 import Guestbook from "./guestbook.jsx";
 import Tributes from "./tributes.jsx";
+import LiveStream from "../../components/liveStream.jsx";
 
 /**
  * PhotoGallery Component - Horizontal Scrolling Memorial Gallery
@@ -81,8 +82,8 @@ const FullscreenModal = ({
     onIndexChange
 }) => {
     const videoRef = useRef(null);
-    // const touchStartX = useRef(0);
-    // const touchEndX = useRef(0);
+    const touchStartX = useRef(0);
+    const touchEndX = useRef(0);
 
     const currentItem = media[currentIndex];
 
@@ -113,33 +114,38 @@ const FullscreenModal = ({
         };
     }, [onClose, onPrev, onNext]);
 
-    // // Handle touch swipe
-    // const handleTouchStart = (e) => {
-    //     touchStartX.current = e.touches[0].clientX;
-    // };
+    // Handle touch swipe
+    const handleTouchStart = (e) => {
+        touchStartX.current = e.touches[0].clientX;
+    };
 
-    // const handleTouchMove = (e) => {
-    //     touchEndX.current = e.touches[0].clientX;
-    // };
+    const handleTouchMove = (e) => {
+        touchEndX.current = e.touches[0].clientX;
+    };
 
-    // const handleTouchEnd = () => {
-    //     const diff = touchStartX.current - touchEndX.current;
-    //     const threshold = 50;
+    const handleTouchEnd = () => {
+        const diff = touchStartX.current - touchEndX.current;
+        const threshold = 20;
 
-    //     if (diff > threshold) {
-    //         onNext();
-    //     } else if (diff < -threshold) {
-    //         onPrev();
-    //     }
-    // };
+        if (diff > threshold) {
+            onNext();
+            return;
+        } else if (diff < -threshold) {
+            onPrev();
+            return;
+        }
+
+        onClose();
+
+    };
 
     return (
         <div
             className="fullscreen-modal"
             onClick={onClose}
-        // onTouchStart={handleTouchStart}
-        // onTouchMove={handleTouchMove}
-        // onTouchEnd={handleTouchEnd}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
         >
             {/* Close button */}
             <button
@@ -511,6 +517,8 @@ export default function PhotoGallery() {
             <Guestbook />
             {/* Tributes Section */}
             <Tributes />
+            {/* Live Stream Section */}
+            <LiveStream />
         </div>
     );
 }

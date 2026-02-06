@@ -34,8 +34,8 @@ export default function Footer() {
     const multimedia = [
         { text: "Photo Gallery", link: "/gallery#photo-gallery-page" },
         { text: "Guest Book", link: "/gallery#guestbook" },
-        { text: "Video Tributes", link: "/gallery#video-tributes" },
         { text: "Tributes", link: "/gallery#tributes" },
+        { text: "Live Stream", link: "/gallery#live-stream" },
     ];
 
     // Handle navigation - works for both same-page hash links and cross-page links

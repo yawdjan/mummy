@@ -96,7 +96,6 @@ export default function Announcement() {
                             <span className="date-label">Sunrise</span>
                             <span className="date-value">{deceased.birthDate}</span>
                         </div>
-                        <span className="date-separator">—</span>
                         <div className="date-group">
                             <span className="date-label">Sunset</span>
                             <span className="date-value">{deceased.deathDate}</span>
