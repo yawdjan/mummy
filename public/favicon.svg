@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="1000"><g clip-path="url(#SvgjsClipPath1089)"><rect width="1000" height="1000" fill="#ffffff"></rect><g transform="matrix(1.953125,0,0,1.953125,0,0)"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background Circle -->
+  <circle cx="256" cy="256" r="240" fill="#722F37"></circle>
+  
+  <!-- Inner Gold Ring -->
+  <circle cx="256" cy="256" r="200" fill="none" stroke="#D4A853" stroke-width="8"></circle>
+  
+  <!-- Cross Symbol -->
+  <g fill="#D4A853">
+    <!-- Vertical bar -->
+    <rect x="236" y="120" width="40" height="272" rx="6"></rect>
+    <!-- Horizontal bar -->
+    <rect x="156" y="180" width="200" height="40" rx="6"></rect>
+  </g>
+  
+  <!-- Decorative dots -->
+  <circle cx="256" cy="420" r="12" fill="#D4A853" opacity="0.6"></circle>
+  <circle cx="220" cy="410" r="6" fill="#D4A853" opacity="0.4"></circle>
+  <circle cx="292" cy="410" r="6" fill="#D4A853" opacity="0.4"></circle>
+</svg></svg></g></g><defs><clipPath id="SvgjsClipPath1089"><rect width="1000" height="1000" x="0" y="0" rx="500" ry="500"></rect></clipPath></defs></svg>

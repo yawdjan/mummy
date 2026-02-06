@@ -2,32 +2,140 @@
 <html lang="en">
 
 <head>
+  <!-- ==========================================
+         PRIMARY META TAGS
+         ========================================== -->
   <meta charset="utf-8" />
-  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Great+Vibes&family=Lato:wght@300;400;500;700&display=swap"
-    rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
-  <meta name="description" content="Web site created using create-react-app" />
-  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-  <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-  <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>In Loving Memory of Mrs. Adriana Amy Danquah | Obituary Site</title>
+  <meta name="title" content="In Loving Memory of Mrs. Adriana Amy Danquah | Obituary Site" />
+  <meta name="description"
+    content="Join us in celebrating the beautiful life of Mrs. Adriana Amy Danquah. View photos, share tributes, sign the guestbook, and watch the memorial service live stream." />
+  <meta name="keywords"
+    content="Adriana Amy Danquah, memorial, funeral service, celebration of life, tribute, obituary, Ghana, memorial service" />
+  <meta name="author" content="Danquah Family" />
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-  <title>React App</title>
+  <!-- Robots & Crawling -->
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1" />
+
+  <!-- Canonical URL (update with your actual domain) -->
+  <link rel="canonical" href="https://obituary.adrianaamydanquah.cloud/" />
+
+
+  <!-- ==========================================
+         FAVICONS & APP ICONS
+         ========================================== -->
+  <!-- Standard Favicon -->
+  <link rel="icon" type="image/x-icon" href="%PUBLIC_URL%/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png" />
+
+  <!-- from site -->
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Adriana Amy Danquah Memorial" />
+<link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Apple Touch Icons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="%PUBLIC_URL%/apple-touch-icon-152x152.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="%PUBLIC_URL%/apple-touch-icon-120x120.png" />
+
+  <!-- Android Chrome -->
+  <link rel="icon" type="image/png" sizes="192x192" href="%PUBLIC_URL%/android-chrome-192x192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="%PUBLIC_URL%/android-chrome-512x512.png" />
+
+  <!-- Web App Manifest -->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+  <!-- Microsoft Tiles -->
+  <meta name="msapplication-TileColor" content="#722F37" />
+  <meta name="msapplication-TileImage" content="%PUBLIC_URL%/mstile-144x144.png" />
+  <meta name="msapplication-config" content="%PUBLIC_URL%/browserconfig.xml" />
+
+  <!-- ==========================================
+         THEME & COLORS
+         ========================================== -->
+  <meta name="theme-color" content="#722F37" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Memorial" />
+
+  <!-- ==========================================
+         PRECONNECT & PERFORMANCE
+         ========================================== -->
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- YouTube (for live stream) -->
+  <link rel="preconnect" href="https://www.youtube.com" />
+  <link rel="preconnect" href="https://www.googleapis.com" />
+
+  <!-- DNS Prefetch -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://www.youtube.com" />
+
+  <!-- ==========================================
+         FONTS
+         ========================================== -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Great+Vibes&family=Lato:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- ==========================================
+         STRUCTURED DATA (JSON-LD)
+         ========================================== -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Memorial Service for Mrs. Adriana Amy Danquah",
+      "description": "A celebration of life memorial service honoring Mrs. Adriana Amy Danquah",
+      "startDate": "2025-02-06T08:00:00+00:00",
+      "endDate": "2025-02-08T19:00:00+00:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "State House, Osu",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Accra",
+          "addressCountry": "GH"
+        }
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "Danquah Family"
+      },
+      "image": "https://obituary.adrianaamydanquah.cloud/res/logo-mummy.jpeg",
+      "url": "https://obituary.adrianaamydanquah.cloud/"
+    }
+    </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Mrs. Adriana Amy Danquah Memorial",
+      "url": "https://obituary.adrianaamydanquah.cloud/",
+      "description": "Memorial website celebrating the life of Mrs. Adriana Amy Danquah"
+    }
+    </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mrs. Adriana Amy Danquah",
+      "description": "Beloved mother, sister, and friend"
+    }
+    </script>
 </head>
 
 <body>
