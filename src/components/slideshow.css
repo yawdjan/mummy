@@ -94,7 +94,7 @@
     aspect-ratio: 4 / 5; /* Portrait orientation for memorial photos */
     
     border-radius: var(--radius-xl);
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 .slide {
