@@ -139,7 +139,7 @@ export default function Landing() {
           >
             <div className="circle-container" id="circle-container">
               <img
-                src="/res/circle.png"
+                src="/res/—Pngtree—golden circle frame with beautiful_6739099.png"
                 alt="circle-decor"
                 className="circle-decor"
                 id="circle-decor"

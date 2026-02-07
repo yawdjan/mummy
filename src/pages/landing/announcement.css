@@ -78,7 +78,7 @@
     
     /* Ornate gold frame effect */
     padding: 12px;
-    background: linear-gradient(
+    /* background: linear-gradient(
         135deg,
         #d4a835 0%,
         #f3dc93 15%,
@@ -87,17 +87,17 @@
         #d4a835 70%,
         #f3dc93 85%,
         #d4a835 100%
-    );
+    ); */
     
     border-radius: var(--radius-lg);
     
     /* Outer gold border */
-    box-shadow: 
+    /* box-shadow: 
         0 0 0 4px #b8892a,
         0 0 0 6px #d4a835,
         0 0 0 10px rgba(212, 168, 53, 0.3),
         0 20px 60px rgba(0, 0, 0, 0.2),
-        inset 0 0 20px rgba(0, 0, 0, 0.1);
+        inset 0 0 20px rgba(0, 0, 0, 0.1); */
 }
 
 .portrait-image {
@@ -105,12 +105,7 @@
     height: 100%;
     
     /* Placeholder - wine gradient until real image added */
-    background: linear-gradient(
-        180deg,
-        #e8d5d8 0%,
-        #d4b8bd 50%,
-        #c9a5ab 100%
-    );
+    background-image: url("../../../public/res/2026-02-07\ 01.16.43.png");
     
     background-size: cover;
     background-position: center top;
@@ -328,12 +323,11 @@
     height: 200px;
     pointer-events: none;
     opacity: 0.15;
-    
-    background: radial-gradient(
+    /* background: radial-gradient(
         ellipse at center,
         var(--color-gold-400),
         transparent 70%
-    );
+    ); */
 }
 
 .announcement-decor-left {
@@ -362,9 +356,9 @@
         max-width: 240px;
     }
     
-    .portrait-frame {
+    /* .portrait-frame {
         padding: 8px;
-    }
+    } */
     
     .frame-flourish {
         width: 30px;
@@ -418,12 +412,12 @@
     
     .portrait-frame {
         padding: 16px;
-        box-shadow: 
+        /* box-shadow: 
             0 0 0 5px #b8892a,
             0 0 0 8px #d4a835,
             0 0 0 14px rgba(212, 168, 53, 0.3),
             0 30px 80px rgba(0, 0, 0, 0.25),
-            inset 0 0 30px rgba(0, 0, 0, 0.1);
+            inset 0 0 30px rgba(0, 0, 0, 0.1); */
     }
     
     .frame-flourish {

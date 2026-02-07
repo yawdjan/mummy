@@ -45,7 +45,7 @@ export default function Announcement() {
                             role="img"
                             aria-label={`Portrait of ${deceased.title} ${deceased.firstName} ${deceased.middleName} ${deceased.lastName}`}
                             // Add actual image path here:
-                            // style={{ backgroundImage: 'url(/res/portrait.jpg)' }}
+                            // style={{ backgroundImage: 'url(/res/2026-02-07 01.16.43.jpg)' }}
                         />
                     </div>
                     
