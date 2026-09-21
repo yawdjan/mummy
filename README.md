@@ -1,70 +1,147 @@
-# Getting Started with Create React App
+# Adriana Amy Danquah Memorial
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A responsive memorial website created to celebrate the life and legacy of **Mrs. Adriana Amy Danquah**. Visitors can learn about her life, browse memories, view service information, watch the live stream, and share messages through the guestbook and tributes sections.
 
-## Available Scripts
+Live site: [obituary.adrianaamydanquah.cloud](https://obituary.adrianaamydanquah.cloud/)
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- Memorial landing page with biography and highlights
+- Responsive photo gallery and multimedia content
+- Service and event information
+- Embedded YouTube live-stream support
+- Guestbook for messages from family and friends
+- Tributes with categories, featured entries, pagination, and hearts/likes
+- Overall memorial statistics
+- Hash-based navigation suitable for static hosting and GitHub Pages
+- SEO metadata, Open Graph-style site configuration, structured data, favicons, manifest, robots.txt, and sitemap
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tech stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [React](https://react.dev/) 19
+- [React Router](https://reactrouter.com/) with `HashRouter`
+- [Create React App](https://create-react-app.dev/) and `react-scripts`
+- [React YouTube](https://www.npmjs.com/package/react-youtube)
+- CSS for styling and responsive layouts
+- A separate HTTP API for guestbook, tribute, and statistics data
 
-### `npm test`
+## Getting started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
 
-### `npm run build`
+- Node.js 18 or newer recommended
+- npm
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Clone the repository and install dependencies:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+git clone https://github.com/yawdjan/mummy.git
+cd mummy
+npm install
+```
 
-### `npm run eject`
+Create a local environment file if you need to point the frontend at a different API. Create `.env` in the project root or in the location expected by your local setup:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```dotenv
+REACT_APP_API_URL=https://your-api.example.com/api
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The application falls back to the configured production API when `REACT_APP_API_URL` is not provided. Do not commit passwords, private keys, tokens, or other secrets to the repository.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Run locally
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm start
+```
 
-## Learn More
+Open [http://localhost:3000](http://localhost:3000) in your browser. The development server reloads automatically when source files change.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Available scripts
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+| Command | Description |
+| --- | --- |
+| `npm start` | Starts the development server on port 3000. |
+| `npm test` | Runs the test suite in interactive watch mode. |
+| `npm run build` | Creates an optimized production build in `build/`. |
+| `npm run eject` | Ejects Create React App configuration. This is irreversible and generally not recommended. |
 
-### Code Splitting
+## Project structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```text
+public/                  Static assets, metadata, icons, manifest, and sitemap
+src/
+├── api/                  Client services for guestbook, tributes, and statistics
+├── components/           Shared navigation, footer, slideshow, and live-stream components
+├── pages/
+│   ├── landing/          Memorial landing page
+│   ├── events/           Service and event information
+│   └── multimedia/       Photo gallery and multimedia pages
+├── App.js                Application routes and shared layout
+├── App.css               Application-level styles
+└── index.js              React entry point
+```
 
-### Analyzing the Bundle Size
+## Routes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+The application uses hash-based routes so it can be served without server-side URL rewriting:
 
-### Making a Progressive Web App
+- `#/` or `#/landing` — memorial landing page
+- `#/events` — service and event information
+- `#/gallery` — photo gallery
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Additional landing-page sections are linked using page anchors, such as `#tributes`, `#guestbook`, and `#live-stream`.
 
-### Advanced Configuration
+## API configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+The API client is defined in [`src/api/memorialapi.js`](src/api/memorialapi.js). It exposes services for:
 
-### Deployment
+- **Guestbook:** list messages, retrieve a message, submit a message, and heart a message
+- **Tributes:** list, filter, retrieve, and submit tributes, plus retrieve categories
+- **Statistics:** retrieve overall memorial statistics
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Set `REACT_APP_API_URL` before starting or building the app to use a different backend. Environment variables beginning with `REACT_APP_` are bundled into the client application, so they must never contain sensitive credentials.
 
-### `npm run build` fails to minify
+## Production build
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Build the application with:
+
+```bash
+npm run build
+```
+
+The generated files in `build/` can be deployed to any static hosting provider. Because the app uses `HashRouter`, deployments do not need special rewrite rules for the supported routes.
+
+Before deploying, verify that:
+
+1. The API URL is configured for the target environment.
+2. The backend allows requests from the deployed site origin (CORS).
+3. Images, favicon files, and manifest paths resolve correctly.
+4. The canonical URL, sitemap, and structured-data dates match the current memorial site.
+5. No `.env` files or credentials are included in the build or repository.
+
+## Testing
+
+Run the test suite with:
+
+```bash
+npm test
+```
+
+For a production-style validation, create a build as well:
+
+```bash
+npm run build
+```
+
+## Contributing
+
+1. Create a feature branch from `master`.
+2. Make focused changes and keep memorial content accurate and respectful.
+3. Run `npm test` and `npm run build` before opening a pull request.
+4. Describe any API, content, or deployment configuration changes in the pull request.
+
+## License and content
+
+No open-source license is currently declared in this repository. Unless permission is granted by the Danquah family, memorial text, photographs, videos, and other personal content should be treated as protected and should not be reused or redistributed.
